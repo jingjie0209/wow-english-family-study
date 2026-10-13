@@ -1,0 +1,552 @@
+{
+  "source": {
+    "comic": "page headers via Vision OCR",
+    "extension": "page Unit/part headers via Vision OCR, fallback to official 3-page sequence",
+    "wordcards": "exact required-word match against Vision OCR of 51 word-card pages"
+  },
+  "mapping": [
+    {
+      "episode": 1,
+      "comic": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "extension": [
+        2,
+        3
+      ],
+      "wordcards": [
+        2,
+        3
+      ]
+    },
+    {
+      "episode": 2,
+      "comic": [
+        7,
+        8
+      ],
+      "extension": [
+        2
+      ],
+      "wordcards": [
+        2,
+        3
+      ]
+    },
+    {
+      "episode": 3,
+      "comic": [
+        9
+      ],
+      "extension": [
+        2
+      ],
+      "wordcards": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "episode": 4,
+      "comic": [
+        10,
+        11,
+        12,
+        13
+      ],
+      "extension": [
+        4,
+        5
+      ],
+      "wordcards": [
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "episode": 5,
+      "comic": [
+        14,
+        15,
+        16
+      ],
+      "extension": [
+        4
+      ],
+      "wordcards": [
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "episode": 6,
+      "comic": [
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "extension": [
+        6,
+        7
+      ],
+      "wordcards": [
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "episode": 7,
+      "comic": [],
+      "extension": [
+        8,
+        9
+      ],
+      "wordcards": [
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "episode": 8,
+      "comic": [
+        24,
+        25,
+        26,
+        27,
+        28
+      ],
+      "extension": [
+        6
+      ],
+      "wordcards": [
+        7,
+        9,
+        14
+      ]
+    },
+    {
+      "episode": 9,
+      "comic": [
+        29,
+        30
+      ],
+      "extension": [
+        8
+      ],
+      "wordcards": [
+        13,
+        14
+      ]
+    },
+    {
+      "episode": 10,
+      "comic": [
+        31,
+        32,
+        33,
+        34,
+        35,
+        36
+      ],
+      "extension": [
+        10,
+        11
+      ],
+      "wordcards": [
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "episode": 11,
+      "comic": [
+        37,
+        38
+      ],
+      "extension": [
+        12,
+        13
+      ],
+      "wordcards": [
+        16,
+        17
+      ]
+    },
+    {
+      "episode": 12,
+      "comic": [
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "extension": [
+        10
+      ],
+      "wordcards": [
+        19,
+        20,
+        21
+      ]
+    },
+    {
+      "episode": 13,
+      "comic": [],
+      "extension": [
+        12
+      ],
+      "wordcards": [
+        19,
+        20,
+        21
+      ]
+    },
+    {
+      "episode": 14,
+      "comic": [
+        45,
+        46,
+        47,
+        48
+      ],
+      "extension": [
+        14,
+        15
+      ],
+      "wordcards": [
+        22,
+        23,
+        24,
+        25
+      ]
+    },
+    {
+      "episode": 15,
+      "comic": [
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55
+      ],
+      "extension": [
+        16,
+        17
+      ],
+      "wordcards": [
+        23,
+        24
+      ]
+    },
+    {
+      "episode": 16,
+      "comic": [],
+      "extension": [
+        14
+      ],
+      "wordcards": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "episode": 17,
+      "comic": [
+        56,
+        57
+      ],
+      "extension": [
+        16
+      ],
+      "wordcards": [
+        23
+      ]
+    },
+    {
+      "episode": 18,
+      "comic": [
+        58,
+        59,
+        60,
+        61,
+        62
+      ],
+      "extension": [
+        18,
+        19
+      ],
+      "wordcards": [
+        28,
+        29,
+        30
+      ]
+    },
+    {
+      "episode": 19,
+      "comic": [
+        63,
+        64
+      ],
+      "extension": [
+        20,
+        21
+      ],
+      "wordcards": [
+        28,
+        29
+      ]
+    },
+    {
+      "episode": 20,
+      "comic": [
+        65,
+        66,
+        67,
+        68
+      ],
+      "extension": [
+        18
+      ],
+      "wordcards": [
+        31,
+        32,
+        33
+      ]
+    },
+    {
+      "episode": 21,
+      "comic": [
+        69,
+        70
+      ],
+      "extension": [
+        20
+      ],
+      "wordcards": [
+        31,
+        32,
+        33
+      ]
+    },
+    {
+      "episode": 22,
+      "comic": [
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77
+      ],
+      "extension": [
+        22,
+        23
+      ],
+      "wordcards": [
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "episode": 23,
+      "comic": [],
+      "extension": [
+        24,
+        25
+      ],
+      "wordcards": [
+        35,
+        36
+      ]
+    },
+    {
+      "episode": 24,
+      "comic": [
+        78,
+        79,
+        80,
+        81,
+        82,
+        83
+      ],
+      "extension": [
+        22
+      ],
+      "wordcards": [
+        37,
+        38,
+        39,
+        42
+      ]
+    },
+    {
+      "episode": 25,
+      "comic": [],
+      "extension": [
+        24
+      ],
+      "wordcards": [
+        37,
+        38,
+        39
+      ]
+    },
+    {
+      "episode": 26,
+      "comic": [
+        84,
+        85,
+        86,
+        87
+      ],
+      "extension": [
+        26,
+        27
+      ],
+      "wordcards": [
+        40,
+        42
+      ]
+    },
+    {
+      "episode": 27,
+      "comic": [
+        88,
+        89
+      ],
+      "extension": [
+        28,
+        29
+      ],
+      "wordcards": [
+        40,
+        42
+      ]
+    },
+    {
+      "episode": 28,
+      "comic": [
+        90,
+        91,
+        92,
+        93,
+        94
+      ],
+      "extension": [
+        26
+      ],
+      "wordcards": [
+        43,
+        44,
+        45
+      ]
+    },
+    {
+      "episode": 29,
+      "comic": [
+        95,
+        96
+      ],
+      "extension": [
+        28
+      ],
+      "wordcards": [
+        43,
+        44,
+        45
+      ]
+    },
+    {
+      "episode": 30,
+      "comic": [
+        97,
+        98,
+        99,
+        100,
+        101,
+        102
+      ],
+      "extension": [
+        30,
+        31
+      ],
+      "wordcards": [
+        7,
+        46
+      ]
+    },
+    {
+      "episode": 31,
+      "comic": [
+        103
+      ],
+      "extension": [
+        32,
+        33
+      ],
+      "wordcards": [
+        8,
+        46,
+        47
+      ]
+    },
+    {
+      "episode": 32,
+      "comic": [
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113
+      ],
+      "extension": [
+        30
+      ],
+      "wordcards": [
+        8,
+        9,
+        49,
+        50
+      ]
+    },
+    {
+      "episode": 33,
+      "comic": [],
+      "extension": [
+        32
+      ],
+      "wordcards": [
+        8,
+        49,
+        50,
+        51
+      ]
+    }
+  ]
+}

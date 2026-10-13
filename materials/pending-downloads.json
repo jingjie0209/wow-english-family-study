@@ -1,0 +1,11 @@
+{
+  "note": "这些资料在网盘中存在但尚未从预览中取回，需要用网盘客户端下载",
+  "items": [
+    {"category":"单词卡","levels":[3,4,5,6],"source":"04.1-6级（单词卡）PDF格式可打印","files":["3.第三级单词卡.pdf","4.第四级单词卡.pdf","5.第五级单词卡.pdf","6.第六级单词卡.pdf"]},
+    {"category":"思维导图","levels":[2,3,4,5],"source":"05.思维导图【黄蓝红绿四色】（1-5级）","files":["02 蓝色思维导图.pdf","03 红色思维导图.pdf","04 绿色思维导图.pdf","思维导图5.png"]},
+    {"category":"亲子拓展","levels":[2,3],"source":"07.Wow亲子拓展(1-3级)","files":["Wow English 亲子拓展（第二季）-unlocked.pdf","Wow English 亲子拓展（第三季）.pdf"]},
+    {"category":"学习计划表","levels":[1,2,3,4,5],"source":"06.Wow English 1-5级打卡表","files":["打卡计划表1-5级.xlsx"]},
+    {"category":"音频","levels":[1,2,3,4,5,6,7,8],"source":"03.Wow English (1-9级完整版) 配套音频.MP3","note":"每级一个子文件夹，共约240个MP3"},
+    {"category":"视频","levels":[1,2,3,4,5,6,7,8],"source":"02.Wow English (1-9级完整版) 内嵌英文字幕","note":"每级一个子文件夹，共约240个MP4"}
+  ]
+}

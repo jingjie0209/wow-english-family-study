@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>WOW English 资料拆分工作台</title>
+  <style>
+    :root { --ink:#1d1d1f; --muted:#6e6e73; --line:#e5e5e7; --green:#17604d; --soft:#f5f8f6; --amber:#9a6810; }
+    * { box-sizing:border-box; }
+    body { margin:0; color:var(--ink); background:#fff; font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue",Arial,sans-serif; }
+    main { max-width:1320px; margin:0 auto; padding:0 32px 64px; }
+    header { padding:28px 0 34px; border-bottom:1px solid var(--line); }
+    .topline { display:flex; justify-content:space-between; gap:20px; align-items:center; border-bottom:1px solid #f0f0f2; padding-bottom:14px; }
+    .brand { margin:0; font-size:13px; font-weight:800; letter-spacing:.02em; } .brand b { color:#164d3c; } .brand span { color:var(--muted); font-weight:500; }
+    nav a { color:var(--muted); text-decoration:none; margin-left:18px; font-size:12px; } nav a:hover { color:var(--green); }
+    .eyebrow { margin:30px 0 8px; color:var(--green); font-size:12px; font-weight:800; letter-spacing:.08em; }
+    h1 { margin:0; font-size:40px; line-height:1.12; letter-spacing:-.02em; } .lead { max-width:780px; margin:14px 0 0; color:#5f6460; font-size:15px; line-height:1.7; }
+    .notice { margin-top:22px; padding:13px 16px; border-left:3px solid var(--green); background:var(--soft); color:#4d5a52; font-size:13px; line-height:1.6; }
+    .layout { display:grid; grid-template-columns:190px minmax(0,1fr); align-items:start; }
+    aside { position:sticky; top:14px; padding:30px 26px 0 0; } aside h2 { margin:0 0 12px; color:#929995; font-size:11px; letter-spacing:.06em; } aside a { display:block; padding:9px 10px; border-left:2px solid transparent; color:#59635c; text-decoration:none; font-size:13px; } aside a:hover, aside a.active { color:var(--green); border-left-color:var(--green); background:var(--soft); }
+    section { padding:34px 0 0; } section + section { border-top:1px solid var(--line); margin-top:38px; padding-top:32px; } h2 { margin:0 0 8px; font-size:24px; } h3 { margin:0; font-size:15px; } .intro { margin:0 0 18px; color:var(--muted); font-size:13px; line-height:1.6; }
+    .level-grid { overflow-x:auto; border:1px solid var(--line); } table { min-width:900px; width:100%; border-collapse:collapse; table-layout:fixed; } th,td { padding:11px 12px; text-align:left; vertical-align:top; border-right:1px solid #ededee; border-bottom:1px solid #ededee; font-size:12px; line-height:1.45; } thead th { background:#f7f8f7; color:#39443d; font-size:12px; } tbody th { width:120px; background:#fbfcfb; } .level-id { display:inline-flex; width:24px; height:24px; border-radius:50%; justify-content:center; align-items:center; margin-right:6px; color:var(--green); background:#e6f0ea; font-weight:800; }
+    .status-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; } .material { display:grid; grid-template-columns:116px 1fr; gap:12px; padding:13px 14px; border:1px solid var(--line); } .material strong { font-size:13px; } .material p { margin:0; color:#5e665f; font-size:12px; line-height:1.55; } .material small { display:block; margin-top:5px; color:var(--amber); font-size:11px; }
+    .tag { display:inline-flex; align-items:center; height:22px; padding:0 8px; border-radius:999px; background:#eef5f0; color:var(--green); font-size:11px; font-weight:750; white-space:nowrap; } .tag.warn { background:#fff5dd; color:var(--amber); }
+    .notes { display:grid; grid-template-columns:1fr 1fr; gap:12px; } .note { padding:14px 16px; background:#fafafa; border-left:3px solid #c8d7cd; } .note strong { font-size:13px; } .note p { margin:6px 0 0; color:#5e665f; font-size:12px; line-height:1.6; }
+    .source { color:#737a75; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:11px; word-break:break-word; }
+    @media(max-width:760px){ main{padding:0 18px 44px;} .topline{align-items:flex-start;} nav{display:none;} h1{font-size:32px;} .layout{grid-template-columns:1fr;} aside{position:static; padding:22px 0 0; display:flex; gap:7px; overflow:auto;} aside h2{display:none;} aside a{white-space:nowrap; border:1px solid var(--line); padding:8px 10px;} aside a.active{border-color:var(--green);} .status-grid,.notes{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="topline"><p class="brand"><b>WOW</b> <span>ENGLISH · SOURCE WORKBENCH</span></p><nav><a href="home.html">课程菜单</a><a href="materials-matrix.html">资料对照</a><a href="level-01-package.html">第一季完整包</a><a href="materials-workbench.html" aria-current="page">资料拆分</a></nav></div>
+    <p class="eyebrow">SOURCE EXTRACTION · 2026-09-16</p>
+    <h1>资料拆分工作台</h1>
+    <p class="lead">这一页是独立的资料整理区，用来记录百度网盘中已经核对的源文件、级别覆盖和逐集拆分规则。现有课程页面不在这里改动；只有完成源文件和集数对应后，才进入页面更新。</p>
+    <div class="notice">当前策略：百度网盘作为主资料源；PDF/TXT/XLSX先拆成结构化数据，视频与音频暂只建目录，不下载、不嵌入现有页面。</div>
+  </header>
+  <div class="layout">
+    <aside><h2>整理导航</h2><a class="active" href="#levels">级别与集数</a><a href="#materials">材料清单</a><a href="#rules">拆分规则</a><a href="#next">下一批任务</a></aside>
+    <div>
+      <section id="levels"><h2>级别与集数</h2><p class="intro">TXT 台词本目录直接给出了级别和集数。每日打卡 PDF 的页码不能简单等同于集数：有的级别先有目录页，有的末尾还有词汇总结页。</p><div class="level-grid"><table><thead><tr><th>级别</th><th>年龄</th><th>台词本集数</th><th>每日打卡源</th><th>已观察到的页码规则</th></tr></thead><tbody>
+        <tr><th><span class="level-id">1</span>Yellow</th><td>3–4岁</td><td>33</td><td>37页，已在本机</td><td>封面1；Day 1从第2页；第35–37页为词汇总结</td></tr>
+        <tr><th><span class="level-id">2</span>Blue</th><td>4–6岁</td><td>33</td><td>37页，已在本机</td><td>第2页可见 Day 1；其余页待逐页核对</td></tr>
+        <tr><th><span class="level-id">3</span>Red</th><td>5–6岁</td><td>33</td><td>37页，已在本机</td><td>第2页为 Contents；Day 1从第3页</td></tr>
+        <tr><th><span class="level-id">4</span>Green</th><td>6–7岁</td><td>32</td><td>45页，已在本机</td><td>第2页为 Contents；第3页为 Unit 1-1 / Day 1</td></tr>
+        <tr><th><span class="level-id">5</span>Orange</th><td>7–8岁</td><td>33</td><td>网盘目录已确认，尚未下载</td><td>待获取 PDF 后确认目录页、Day 页和总结页</td></tr>
+        <tr><th><span class="level-id">6</span>Bronze</th><td>8–9岁</td><td>25</td><td>未在 1–5级打卡目录中看到</td><td>以后以台词本和其他资料源为准</td></tr>
+        <tr><th><span class="level-id">7</span>Silver</th><td>9–10岁</td><td>26</td><td>未在 1–5级打卡目录中看到</td><td>以后以台词本和其他资料源为准</td></tr>
+        <tr><th><span class="level-id">8</span>Gold</th><td>10–12岁</td><td>26</td><td>未在 1–5级打卡目录中看到</td><td>以后以台词本和其他资料源为准</td></tr>
+      </tbody></table></div></section>
+      <section id="materials"><h2>材料清单</h2><p class="intro">“已核目录”表示百度盘中已经看到明确文件或文件夹；“部分拆分”表示本机已有样本或页数证据，但还没有完成结构化读取。</p><div class="status-grid">
+        <article class="material"><strong>台词本</strong><div><span class="tag">1–8级</span><p>黑白 PDF + TXT；TXT 文件夹名称直接带出每级集数。</p><small>下一步：下载 TXT，拆成 level / episode / line。</small></div></article>
+        <article class="material"><strong>漫画台词本</strong><div><span class="tag">1–5级</span><p>黄色、蓝色、红色、绿色、橘色五份 PDF。</p><small>保留为儿童友好阅读层，不替换完整台词。</small></div></article>
+        <article class="material"><strong>点读包</strong><div><span class="tag">1–4级</span><p>按 wow 第1季至第4季分文件夹。</p><small>待确认音频格式和点读调用方式。</small></div></article>
+        <article class="material"><strong>音频</strong><div><span class="tag">1–9级</span><p>独立 MP3 目录，后续按文件名建立音频索引。</p><small>视频暂不下载；音频也先不改现有页面。</small></div></article>
+        <article class="material"><strong>单词卡</strong><div><span class="tag">1–6级</span><p>六份可打印 PDF，文件大小已记录。</p><small>下一步：提取词条、图片和级别。</small></div></article>
+        <article class="material"><strong>打卡表</strong><div><span class="tag">1–5级</span><p>五份每日打卡 PDF；1–4级页数已在本机核对。</p><small>下一步：完成 5级下载和逐页映射。</small></div></article>
+        <article class="material"><strong>思维导图</strong><div><span class="tag">1–5级</span><p>黄、蓝、红、绿四份 PDF，加第5级 PNG。</p><small>下一步：提取句型主干和替换词。</small></div></article>
+        <article class="material"><strong>亲子拓展</strong><div><span class="tag">1–3季</span><p>三份 PDF，另含部分单词卡和打卡资料副本。</p><small>下一步：按活动类型拆分，避免重复导入。</small></div></article>
+        <article class="material"><strong>学习计划表</strong><div><span class="tag">1–5级</span><p>打卡计划表1-5级.xlsx，107KB。</p><small>下一步：读取工作表和字段。</small></div></article>
+        <article class="material"><strong>小测</strong><div><span class="tag warn">5页</span><p>测试题 PDF 已确认，第一页可见词汇匹配题。</p><small>下一步：分类五页题型和适用级别。</small></div></article>
+      </div></section>
+      <section id="rules"><h2>拆分规则</h2><div class="notes"><div class="note"><strong>逐集主键</strong><p>优先使用“级别 + episode number”。台词本、每日打卡、音频、单词卡、思维导图都通过这个主键挂接，不能只按文件名相似度覆盖。</p></div><div class="note"><strong>源文本优先级</strong><p>完整台词本以 TXT/PDF 为源；教材重点以每日打卡页为源；漫画版和亲子拓展只作为辅助内容，不覆盖原文。</p></div><div class="note"><strong>页码规则</strong><p>每日打卡的 PDF 页码先登记为 sourcePage，不直接写成 Day。先识别封面、Contents、Day 页和词汇总结页，再建立 page-to-episode 映射。</p></div><div class="note"><strong>重复处理</strong><p>亲子拓展目录中的单词卡和打卡 PDF是副本，记录为 alias，不重复计入材料总数；真正内容只保留一个主文件。</p></div></div></section>
+      <section id="next"><h2>下一步</h2><ol class="intro" style="padding-left:20px"><li><a href="level-01-package.html">先看第一季完整包样板</a>：33集教材重点、33份台词、课程入口和视频状态已经打通。</li><li>获取并读取 1–8级 TXT 台词本，建立逐集台词索引。</li><li>获取 5级打卡 PDF 和 1–5级 XLSX，补齐计划表与页码映射。</li><li>拆 1–5级思维导图、1–6级单词卡，输出可挂接的词条数据。</li><li>读取三份亲子拓展和五页测试题，标注活动/题型/适用级别。</li></ol><p class="source">source: 百度网盘 / 05.wow English（视频+音频） / 02-Wow English TV（孩子看） / 05.wow English配套资料包</p></section>
+    </div>
+  </div>
+</main>
+</body>
+</html>

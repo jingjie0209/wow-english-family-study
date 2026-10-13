@@ -1,0 +1,41 @@
+{
+  "title": "WOW English source extraction manifest",
+  "updated": "2026-09-16",
+  "scope": "Baidu share: 05.wow English (video+audio) / 02-Wow English TV",
+  "policy": {
+    "existingPages": "unchanged",
+    "video": "inventory only; defer download and page integration",
+    "sourceRule": "Do not assign a whole-level file to an episode until the internal page or filename mapping is verified"
+  },
+  "levels": [
+    { "level": 1, "name": "Yellow", "episodes": 33, "age": "3-4", "transcriptTxt": "verified", "dailyPdf": { "local": true, "pages": 37, "coverPage": 1, "day1Page": 2, "mapping": "observed" } },
+    { "level": 2, "name": "Blue", "episodes": 33, "age": "4-6", "transcriptTxt": "verified", "dailyPdf": { "local": true, "pages": 37, "coverPage": 1, "day1Page": 2, "mapping": "observed" } },
+    { "level": 3, "name": "Red", "episodes": 33, "age": "5-6", "transcriptTxt": "verified", "dailyPdf": { "local": true, "pages": 37, "coverPage": 1, "contentsPage": 2, "day1Page": 3, "mapping": "observed" } },
+    { "level": 4, "name": "Green", "episodes": 32, "age": "6-7", "transcriptTxt": "verified", "dailyPdf": { "local": true, "pages": 45, "coverPage": 1, "contentsPage": 2, "day1Page": 3, "mapping": "observed" } },
+    { "level": 5, "name": "Orange", "episodes": 33, "age": "7-8", "transcriptTxt": "verified", "dailyPdf": { "local": false, "pages": null, "mapping": "pending download" } },
+    { "level": 6, "name": "Bronze", "episodes": 25, "age": "8-9", "transcriptTxt": "verified", "dailyPdf": { "local": false, "pages": null, "mapping": "not listed in check-in folder" } },
+    { "level": 7, "name": "Silver", "episodes": 26, "age": "9-10", "transcriptTxt": "verified", "dailyPdf": { "local": false, "pages": null, "mapping": "not listed in check-in folder" } },
+    { "level": 8, "name": "Gold", "episodes": 26, "age": "10-12", "transcriptTxt": "verified", "dailyPdf": { "local": false, "pages": null, "mapping": "not listed in check-in folder" } }
+  ],
+  "materials": [
+    { "id": "transcript-pdf", "category": "台词本", "coverage": "1-8", "evidence": "PDF格式台词本", "status": "inventory-verified", "next": "download and extract episode headings" },
+    { "id": "transcript-txt", "category": "台词本", "coverage": "1-8", "evidence": "8 named TXT folders; episode counts are explicit", "status": "inventory-verified", "next": "download TXT and normalize one record per episode" },
+    { "id": "comic-transcript", "category": "台词本", "coverage": "1-5", "evidence": "黄色/蓝色/红色/绿色/橘色 PDF; sizes 49.3-65.6M", "status": "inventory-verified", "next": "keep as child-friendly reading layer; do not replace full transcript" },
+    { "id": "point-reading", "category": "台词本/音频", "coverage": "1-4", "evidence": "wow 第1季 through wow 第4季 folders", "status": "inventory-verified", "next": "inspect internal format before linking" },
+    { "id": "audio", "category": "音频", "coverage": "1-9", "evidence": "03.Wow English (1-9级完整版) 配套音频.MP3", "status": "inventory-verified", "next": "map filenames to level and episode" },
+    { "id": "flashcards", "category": "学习卡", "coverage": "1-6", "evidence": "six PDFs; 2.8M, 3.9M, 4.5M, 8.3M, 11.4M, 7.9M", "status": "inventory-verified", "next": "extract word lists and image assets" },
+    { "id": "daily-checkin", "category": "打卡表", "coverage": "1-5", "evidence": "five named daily PDFs; level 1-4 local page counts verified", "status": "partially-extracted", "next": "download level 5 and normalize day-page mapping" },
+    { "id": "study-plan", "category": "学习计划表", "coverage": "1-5", "evidence": "打卡计划表1-5级.xlsx (107KB)", "status": "inventory-verified", "next": "download and read workbook sheets" },
+    { "id": "mindmaps", "category": "思维导图", "coverage": "1-5", "evidence": "four PDFs plus 思维导图5.png", "status": "inventory-verified", "next": "extract pattern labels and replacement groups" },
+    { "id": "parent-extension", "category": "拓展", "coverage": "1-3", "evidence": "three亲子拓展 PDFs", "status": "inventory-verified", "next": "split by season and activity type" },
+    { "id": "tests", "category": "小测", "coverage": "general", "evidence": "15.测试题.pdf; 5 pages; visible vocabulary matching", "status": "partially-extracted", "next": "classify all five pages by question type" },
+    { "id": "video", "category": "视频", "coverage": "1-9", "evidence": "embedded-English-subtitle and subtitle-free folders", "status": "inventory-verified", "next": "defer download; add media links only after source mapping" }
+  ],
+  "dailyPageNotes": [
+    "Level 1 page 1 is the Wow English cover; page 2 is Day 1; pages 35-37 are vocabulary summary pages.",
+    "Level 2 page 2 visibly starts Day 1.",
+    "Level 3 page 2 is a contents page; page 3 visibly starts Day 1.",
+    "Level 4 page 2 is a contents page; page 3 visibly starts Unit 1-1 / Day 1.",
+    "Page numbers must be treated as source-page references, not episode numbers, until each level is fully checked."
+  ]
+}

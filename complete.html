@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WOW English · 完整页面</title>
+<style>
+:root{--ink:#1d1d1f;--muted:#6e6e73;--line:#e5e5e7;--green:#17604d;--amber:#9a6810;--soft:#f5f8f6}
+*{box-sizing:border-box}body{margin:0;background:#fff;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue",Arial,sans-serif}
+main{max-width:1240px;margin:0 auto;padding:0 24px 64px}
+header{padding:32px 0 24px;border-bottom:1px solid var(--line)}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.brand{margin:0;font-size:13px;font-weight:850}.brand b{color:var(--green)}.brand span{color:var(--muted);font-weight:500}
+nav{display:flex;flex-wrap:wrap;gap:8px}
+nav a,button.link{display:inline-flex;align-items:center;height:31px;padding:0 11px;border:1px solid #dce4de;border-radius:6px;background:#fff;color:var(--green);font-size:12px;font-weight:750;text-decoration:none;cursor:pointer}
+nav a:hover,button.link:hover{border-color:#b9c9bf}
+h1{margin:20px 0 8px;font-size:40px;line-height:1.1;letter-spacing:-.02em}
+.lead{margin:0;color:#5f6460;font-size:14px;line-height:1.7;max-width:860px}
+.section{margin-top:34px}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:14px}
+h2{margin:0;font-size:25px}
+.panel{padding:18px;border:1px solid var(--line);border-radius:12px;background:#fff}
+.planner-controls{display:grid;grid-template-columns:minmax(0,420px) minmax(0,1fr);gap:14px;margin-bottom:16px}
+label{display:grid;gap:7px;color:#4f5752;font-size:13px;font-weight:700}
+select{width:100%;height:42px;padding:0 34px 0 12px;border:1px solid #cfd5d1;border-radius:5px;background:#fff;color:#1d1d1f;font:inherit}
+.today-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.today-item{display:flex;flex-direction:column;min-height:132px;padding:14px;border:1px solid #d9dedb;border-radius:8px;background:#fff;color:inherit;text-decoration:none}
+.today-item:hover{border-color:var(--green)}
+.today-item.empty{pointer-events:none;opacity:.45}
+.tag{color:var(--green);font-size:12px;font-weight:850}
+.today-title{margin-top:9px;font-size:14px;font-weight:750;line-height:1.4}
+.today-meta{margin-top:auto;padding-top:10px;color:var(--muted);font-size:12px}
+.practice-list{display:grid;grid-template-columns:1fr 1fr;gap:0 24px;margin-top:18px}
+.practice-row{display:flex;gap:12px;padding:12px 0;border-top:1px solid #e4e6e5}
+.practice-row b{flex:0 0 58px;color:var(--green);font-size:13px}
+.practice-row span{color:#545b56;font-size:13px;line-height:1.55}
+.levels{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.level-card{display:block;padding:13px;border:1px solid var(--line);border-left-width:5px;border-radius:10px;text-decoration:none;color:inherit;background:#fff}
+.level-card:hover{border-color:#b9c9bf}
+.level-head{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.level-no{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:#eef5f0;color:var(--green);font-size:12px;font-weight:850}
+.level-card h3{margin:9px 0 4px;font-size:15px}
+.level-card p{margin:0;color:#5f6460;font-size:11.5px}
+.status{display:inline-flex;align-items:center;height:21px;padding:0 7px;border-radius:999px;background:#eef5f0;color:var(--green);font-size:11px;font-weight:800;white-space:nowrap}
+.status.warn{background:#fff5dd;color:var(--amber)}
+.l1{border-left-color:#b8860b}.l2{border-left-color:#2f6fbd}.l3{border-left-color:#c43d3d}.l4{border-left-color:#2e8b57}
+.l5{border-left-color:#d2691e}.l6{border-left-color:#8c6d46}.l7{border-left-color:#767680}.l8{border-left-color:#b8860b}
+.packages{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.package{display:flex;flex-direction:column;padding:14px;border:1px solid var(--line);border-radius:10px;background:#fff}
+.package h3{margin:0 0 5px;font-size:15px}
+.package p{margin:0 0 12px;color:#5f6460;font-size:12px;line-height:1.5;flex:1}
+.package a{display:inline-flex;align-items:center;justify-content:center;height:31px;padding:0 10px;border:1px solid #dce4de;border-radius:6px;background:#fff;color:var(--green);font-size:12px;font-weight:800;text-decoration:none}
+.package a.muted{color:var(--muted);background:#fafafa}
+.toolbar{display:grid;grid-template-columns:minmax(220px,1fr) minmax(160px,220px);gap:10px;margin-bottom:12px}
+.toolbar input,select{height:42px;padding:0 12px;border:1px solid #cfd5d1;border-radius:5px;background:#fff;color:#1d1d1f;font:inherit}
+.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:8px;background:#fff}
+table{width:100%;min-width:860px;border-collapse:collapse}
+th,td{padding:11px 12px;border-bottom:1px solid #ededee;text-align:left;vertical-align:top;font-size:12px;line-height:1.45}
+th{background:#f7f8f7;color:#39443d;white-space:nowrap}
+td small{display:block;margin-top:4px;color:var(--muted)}
+a{color:var(--green);font-weight:700;text-decoration:none}
+.details-box{margin-top:10px;padding:10px;border:1px solid var(--line);background:var(--soft);white-space:pre-wrap;font-size:12px;line-height:1.55;color:#414a44}
+.modal{position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(0,0,0,.55)}
+.modal.open{display:flex}
+.modal-card{width:min(760px,100%);max-height:88vh;overflow:auto;background:#fff;border-radius:14px;padding:24px;position:relative}
+.modal-close{position:absolute;top:14px;right:14px;width:34px;height:34px;border:0;border-radius:50%;background:#f2f2f4;color:#1d1d1f;font-size:20px;font-weight:800;cursor:pointer}
+.method-item{display:grid;grid-template-columns:34px minmax(0,1fr);gap:12px;padding:14px;border:1px solid var(--line);border-radius:10px}
+.method-item .num{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:var(--green);color:#fff;font-weight:850}
+.method-item h3{margin:0 0 5px;font-size:16px}
+.method-item p{margin:0;color:#5f6460;font-size:13px;line-height:1.6}
+.note{margin-top:24px;padding:12px 14px;border-left:3px solid #d9e4dc;background:#fafbfa;color:#5f6460;font-size:12px;line-height:1.6}
+@media(max-width:900px){.planner-controls,.toolbar{grid-template-columns:1fr}.today-grid,.levels,.packages{grid-template-columns:1fr 1fr}.practice-list{grid-template-columns:1fr}h1{font-size:33px}}
+@media(max-width:560px){.today-grid,.levels,.packages{grid-template-columns:1fr}}
+
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.tab{height:31px;padding:0 12px;display:inline-flex;align-items:center;border:1px solid #dce4de;border-radius:6px;background:#fff;color:var(--green);font-size:12px;font-weight:800;cursor:pointer}
+.tab.active{background:var(--green);color:#fff;border-color:var(--green)}
+.material-table{width:100%;border-collapse:collapse}
+.material-table th,.material-table td{padding:10px 12px;border-bottom:1px solid #ededee;text-align:left;font-size:12px;line-height:1.5}
+.material-table th{background:#f7f8f7;color:#39443d;white-space:nowrap}
+.material-table .muted{color:var(--muted)}
+.pill{display:inline-flex;align-items:center;height:22px;padding:0 8px;border-radius:999px;background:#eef5f0;color:var(--green);font-size:11px;font-weight:800;white-space:nowrap}
+.pill.warn{background:#fff5dd;color:var(--amber)}
+.pill.mute{background:#f2f2f4;color:#6d6d72}
+</style>
+</head>
+<body><main>
+<header>
+  <div class="top">
+    <p class="brand"><b>WOW</b> <span>ENGLISH · COMPLETE VIEW</span></p>
+    <nav><a href="home.html">总入口</a><a href="index.html">第一级菜单</a><a href="level-01-package.html">完整包</a><button class="link" id="open-method">四部滚动法</button></nav>
+  </div>
+  <h1>WOW English · 最完整页面</h1>
+  <p class="lead">这里集中展示学习安排、全部课程和可打印资料。不需要在多个页面之间来回切换。</p>
+</header>
+
+<section class="section" id="today">
+  <div class="section-head"><h2>今天学什么</h2><small style="color:var(--muted)">以第一级 Yellow 为例</small></div>
+  <div class="panel">
+    <div class="planner-controls">
+      <label>选择今天的新课<select id="today-select"></select></label>
+      <div style="display:flex;align-items:end"><div style="color:#5f6460;font-size:12px;line-height:1.5">系统按当前新课自动滚动出近期复习、间隔复习、轻量维护。</div></div>
+    </div>
+    <div class="today-grid" id="today-grid"></div>
+    <div class="practice-list">
+      <div class="practice-row"><b>新课</b><span>完整看 1 遍，再看教材重点；挑 2–4 个词和 1–2 个句型跟读。</span></div>
+      <div class="practice-row"><b>前 1 集</b><span>看关键片段或歌曲，动作跟做，句型跟读 2–3 次。</span></div>
+      <div class="practice-row"><b>前 3 集</b><span>先问“还记得怎么说吗”，再播放核对，不要求整集重看。</span></div>
+      <div class="practice-row"><b>前 7 集</b><span>快速听辨或亲子问答；已经能主动说就结束本轮复习。</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="courses">
+  <div class="section-head"><h2>全部课程</h2><small style="color:var(--muted)">1–8 季</small></div>
+  <div class="levels">
+    <a class="level-card l1" href="index.html"><div class="level-head"><span class="level-no">1</span><span class="status">核心已齐</span></div><h3>Yellow 黄色</h3><p>3–4岁 · 33集</p></a>
+    <a class="level-card l2" href="level-02/level-package.html"><div class="level-head"><span class="level-no">2</span><span class="status warn">重点图已齐</span></div><h3>Blue 蓝色</h3><p>4–6岁 · 33集</p></a>
+    <a class="level-card l3" href="level-03/level-package.html"><div class="level-head"><span class="level-no">3</span><span class="status warn">重点图已齐</span></div><h3>Red 红色</h3><p>5–6岁 · 33集</p></a>
+    <a class="level-card l4" href="level-04/level-package.html"><div class="level-head"><span class="level-no">4</span><span class="status warn">重点图已齐</span></div><h3>Green 绿色</h3><p>6–7岁 · 32集</p></a>
+    <a class="level-card l5" href="level-05/level-package.html"><div class="level-head"><span class="level-no">5</span><span class="status warn">待补资料</span></div><h3>Orange 橘色</h3><p>7–8岁 · 33集</p></a>
+    <a class="level-card l6" href="level-06/level-package.html"><div class="level-head"><span class="level-no">6</span><span class="status warn">待补资料</span></div><h3>Bronze 青铜</h3><p>8–9岁 · 25集</p></a>
+    <a class="level-card l7" href="level-07/level-package.html"><div class="level-head"><span class="level-no">7</span><span class="status warn">待补资料</span></div><h3>Silver 银色</h3><p>9–10岁 · 26集</p></a>
+    <a class="level-card l8" href="level-08/level-package.html"><div class="level-head"><span class="level-no">8</span><span class="status warn">待补资料</span></div><h3>Gold 金色</h3><p>10–12岁 · 26集</p></a>
+  </div>
+</section>
+
+<section class="section" id="materials">
+  <div class="section-head"><h2>分区资料包</h2><small style="color:var(--muted)">第1–8季 · 可直接下载或下载清单</small></div>
+  <div class="tabs" id="material-tabs"></div>
+  <div id="material-panel"></div>
+</section>
+
+
+
+<p class="note">视频与 MP3 原始文件仍需用百度网盘客户端批量下载；详情页音频区已按 <code>audio/001.mp3</code> 格式预留，文件放入即可播放。本站内容仅限家庭个人学习使用。</p>
+</main>
+
+<div class="modal" id="method-modal" role="dialog" aria-modal="true" aria-labelledby="method-title">
+  <div class="modal-card">
+    <button class="modal-close" type="button" aria-label="关闭">×</button>
+    <h2 id="method-title">四部滚动法学习</h2>
+    <div class="method-item"><span class="num">1</span><div><h3>看动画</h3><p>完整看 1 遍本集视频或官方内嵌字幕版；先理解情节，不要求每个词都听懂。</p></div></div>
+    <div class="method-item"><span class="num">2</span><div><h3>听音频</h3><p>用本集配套 MP3 重听 2–3 遍，做动作或看图指认；重点听关键词和句型节奏。</p></div></div>
+    <div class="method-item"><span class="num">3</span><div><h3>读教材重点</h3><p>打开当日打卡页，读 4 个必须掌握词和关键短语；家长先示范，孩子跟读。</p></div></div>
+    <div class="method-item"><span class="num">4</span><div><h3>句型跟读 + 打卡</h3><p>选 1–2 个句型做替换练习，滚动加入前面 1、3、7 集复习；完成后在打卡表标记。</p></div></div>
+  </div>
+</div>
+
+<script>
+const levels = {"01":[{"href":"episodes/episode-01.html","no":"01","title":"Unit 1 hello · story"},{"href":"episodes/episode-02.html","no":"02","title":"Unit 1 hello · song1"},{"href":"episodes/episode-03.html","no":"03","title":"Unit 1 hello · song2"},{"href":"episodes/episode-04.html","no":"04","title":"Unit 2 colour · story"},{"href":"episodes/episode-05.html","no":"05","title":"Unit 2 colour · song"},{"href":"episodes/episode-06.html","no":"06","title":"Unit 3 garden - part 1 · story"},{"href":"episodes/episode-07.html","no":"07","title":"Unit 3 garden - part 1 · song"},{"href":"episodes/episode-08.html","no":"08","title":"Unit 3 garden - part 2 · story"},{"href":"episodes/episode-09.html","no":"09","title":"Unit 3 garden - part 2 · song"},{"href":"episodes/episode-10.html","no":"10","title":"Unit 4 toys- part 1 · story"},{"href":"episodes/episode-11.html","no":"11","title":"Unit 4 toys- part 1 · song"},{"href":"episodes/episode-12.html","no":"12","title":"Unit 4 'toys' - part 2 · story"},{"href":"episodes/episode-13.html","no":"13","title":"Unit 4 'toys' - part 2 · song"},{"href":"episodes/episode-14.html","no":"14","title":"Unit 5 'body' - part 1 · story"},{"href":"episodes/episode-15.html","no":"15","title":"Unit 5 'body' - part 1 · song"},{"href":"episodes/episode-16.html","no":"16","title":"Unit 5 'body' - part 2 · story"},{"href":"episodes/episode-17.html","no":"17","title":"Unit 5 'body' - part 2 · song"},{"href":"episodes/episode-18.html","no":"18","title":"Unit 6 'food' - part 1 · story"},{"href":"episodes/episode-19.html","no":"19","title":"Unit 6 'food' - part 1 · song"},{"href":"episodes/episode-20.html","no":"20","title":"Unit 6 'food' - part 2 · story"},{"href":"episodes/episode-21.html","no":"21","title":"Unit 6 'food' - part 2 · song"},{"href":"episodes/episode-22.html","no":"22","title":"Unit 7 'bugs' - part 1 · story"},{"href":"episodes/episode-23.html","no":"23","title":"Unit 7 'bugs' - part 1 · song"},{"href":"episodes/episode-24.html","no":"24","title":"Unit 7 bugs - part 2 · story"},{"href":"episodes/episode-25.html","no":"25","title":"Unit 7 bugs - part 2 · song"},{"href":"episodes/episode-26.html","no":"26","title":"Unit 8 'feelings' - part 1 · story"},{"href":"episodes/episode-27.html","no":"27","title":"Unit 8 'feelings' - part 1 · song"},{"href":"episodes/episode-28.html","no":"28","title":"Unit 8 'feelings' - part 2 · story"},{"href":"episodes/episode-29.html","no":"29","title":"Unit 8 'feelings' - part 2 · song"},{"href":"episodes/episode-30.html","no":"30","title":"Unit 9 'clothes' - part 1 · story"},{"href":"episodes/episode-31.html","no":"31","title":"Unit 9 'clothes' - part 1 · song"},{"href":"episodes/episode-32.html","no":"32","title":"Unit 9 'clothes' - part 2 · story"},{"href":"episodes/episode-33.html","no":"33","title":"Unit 9 'clothes' - part 2 · song"}],"02":[{"href":"level-02/episodes/episode-01.html","no":"01","title":"Unit 1 · story"},{"href":"level-02/episodes/episode-02.html","no":"02","title":"Unit 1 · song"},{"href":"level-02/episodes/episode-03.html","no":"03","title":"Unit 1 · song"},{"href":"level-02/episodes/episode-04.html","no":"04","title":"Unit 2 · story"},{"href":"level-02/episodes/episode-05.html","no":"05","title":"Unit 2 · song"},{"href":"level-02/episodes/episode-06.html","no":"06","title":"Unit 3 · story"},{"href":"level-02/episodes/episode-07.html","no":"07","title":"Unit 3 · song"},{"href":"level-02/episodes/episode-08.html","no":"08","title":"Unit 3 · story"},{"href":"level-02/episodes/episode-09.html","no":"09","title":"Unit 3 · song"},{"href":"level-02/episodes/episode-10.html","no":"10","title":"Unit 4 · story"},{"href":"level-02/episodes/episode-11.html","no":"11","title":"Unit 4 · song"},{"href":"level-02/episodes/episode-12.html","no":"12","title":"Unit 4 · story"},{"href":"level-02/episodes/episode-13.html","no":"13","title":"Unit 4 · song"},{"href":"level-02/episodes/episode-14.html","no":"14","title":"Unit 5 · story"},{"href":"level-02/episodes/episode-15.html","no":"15","title":"Unit 5 · song"},{"href":"level-02/episodes/episode-16.html","no":"16","title":"Unit 5 · story"},{"href":"level-02/episodes/episode-17.html","no":"17","title":"Unit 5 · song"},{"href":"level-02/episodes/episode-18.html","no":"18","title":"Unit 6 · story"},{"href":"level-02/episodes/episode-19.html","no":"19","title":"Unit 6 · song"},{"href":"level-02/episodes/episode-20.html","no":"20","title":"Unit 6 · story"},{"href":"level-02/episodes/episode-21.html","no":"21","title":"Unit 6 · song"},{"href":"level-02/episodes/episode-22.html","no":"22","title":"Unit 7 · story"},{"href":"level-02/episodes/episode-23.html","no":"23","title":"Unit 7 · song"},{"href":"level-02/episodes/episode-24.html","no":"24","title":"Unit 7 · story"},{"href":"level-02/episodes/episode-25.html","no":"25","title":"Unit 7 · song"},{"href":"level-02/episodes/episode-26.html","no":"26","title":"Unit 8 · story"},{"href":"level-02/episodes/episode-27.html","no":"27","title":"Unit 8 · song"},{"href":"level-02/episodes/episode-28.html","no":"28","title":"Unit 8 · story"},{"href":"level-02/episodes/episode-29.html","no":"29","title":"Unit 8 · song"},{"href":"level-02/episodes/episode-30.html","no":"30","title":"Unit 9 · story"},{"href":"level-02/episodes/episode-31.html","no":"31","title":"Unit 9 · song"},{"href":"level-02/episodes/episode-32.html","no":"32","title":"Unit 9 · story"},{"href":"level-02/episodes/episode-33.html","no":"33","title":"Unit 9 · song"}],"03":[{"href":"level-03/episodes/episode-01.html","no":"01","title":"Unit 1 · story"},{"href":"level-03/episodes/episode-02.html","no":"02","title":"Unit 1 · song"},{"href":"level-03/episodes/episode-03.html","no":"03","title":"Unit 1 · song"},{"href":"level-03/episodes/episode-04.html","no":"04","title":"Unit 2 · story"},{"href":"level-03/episodes/episode-05.html","no":"05","title":"Unit 2 · song"},{"href":"level-03/episodes/episode-06.html","no":"06","title":"Unit 3 · story"},{"href":"level-03/episodes/episode-07.html","no":"07","title":"Unit 3 · song"},{"href":"level-03/episodes/episode-08.html","no":"08","title":"Unit 3 · story"},{"href":"level-03/episodes/episode-09.html","no":"09","title":"Unit 3 · song"},{"href":"level-03/episodes/episode-10.html","no":"10","title":"Unit 4 · story"},{"href":"level-03/episodes/episode-11.html","no":"11","title":"Unit 4 · song"},{"href":"level-03/episodes/episode-12.html","no":"12","title":"Unit 4 · story"},{"href":"level-03/episodes/episode-13.html","no":"13","title":"Unit 4 · song"},{"href":"level-03/episodes/episode-14.html","no":"14","title":"Unit 5 · story"},{"href":"level-03/episodes/episode-15.html","no":"15","title":"Unit 5 · song"},{"href":"level-03/episodes/episode-16.html","no":"16","title":"Unit 5 · story"},{"href":"level-03/episodes/episode-17.html","no":"17","title":"Unit 5 · song"},{"href":"level-03/episodes/episode-18.html","no":"18","title":"Unit 6 · story"},{"href":"level-03/episodes/episode-19.html","no":"19","title":"Unit 6 · song"},{"href":"level-03/episodes/episode-20.html","no":"20","title":"Unit 6 · story"},{"href":"level-03/episodes/episode-21.html","no":"21","title":"Unit 6 · song"},{"href":"level-03/episodes/episode-22.html","no":"22","title":"Unit 7 · story"},{"href":"level-03/episodes/episode-23.html","no":"23","title":"Unit 7 · song"},{"href":"level-03/episodes/episode-24.html","no":"24","title":"Unit 7 · story"},{"href":"level-03/episodes/episode-25.html","no":"25","title":"Unit 7 · song"},{"href":"level-03/episodes/episode-26.html","no":"26","title":"Unit 8 · story"},{"href":"level-03/episodes/episode-27.html","no":"27","title":"Unit 8 · song"},{"href":"level-03/episodes/episode-28.html","no":"28","title":"Unit 8 · story"},{"href":"level-03/episodes/episode-29.html","no":"29","title":"Unit 8 · song"},{"href":"level-03/episodes/episode-30.html","no":"30","title":"Unit 9 · story"},{"href":"level-03/episodes/episode-31.html","no":"31","title":"Unit 9 · song"},{"href":"level-03/episodes/episode-32.html","no":"32","title":"Unit 9 · story"},{"href":"level-03/episodes/episode-33.html","no":"33","title":"Unit 9 · song"}],"04":[{"href":"level-04/episodes/episode-01.html","no":"01","title":"Unit 1 · story"},{"href":"level-04/episodes/episode-02.html","no":"02","title":"Unit 1 · song"},{"href":"level-04/episodes/episode-03.html","no":"03","title":"Unit 2 · story"},{"href":"level-04/episodes/episode-04.html","no":"04","title":"Unit 2 · song"},{"href":"level-04/episodes/episode-05.html","no":"05","title":"Unit 3 · story"},{"href":"level-04/episodes/episode-06.html","no":"06","title":"Unit 3 · story"},{"href":"level-04/episodes/episode-07.html","no":"07","title":"Unit 3 · song"},{"href":"level-04/episodes/episode-08.html","no":"08","title":"Unit 3 · song"},{"href":"level-04/episodes/episode-09.html","no":"09","title":"Unit 4 · story"},{"href":"level-04/episodes/episode-10.html","no":"10","title":"Unit 4 · story"},{"href":"level-04/episodes/episode-11.html","no":"11","title":"Unit 4 · song"},{"href":"level-04/episodes/episode-12.html","no":"12","title":"Unit 4 · song"},{"href":"level-04/episodes/episode-13.html","no":"13","title":"Unit 5 · story"},{"href":"level-04/episodes/episode-14.html","no":"14","title":"Unit 5 · story"},{"href":"level-04/episodes/episode-15.html","no":"15","title":"Unit 5 · song"},{"href":"level-04/episodes/episode-16.html","no":"16","title":"Unit 5 · song"},{"href":"level-04/episodes/episode-17.html","no":"17","title":"Unit 6 · story"},{"href":"level-04/episodes/episode-18.html","no":"18","title":"Unit 6 · story"},{"href":"level-04/episodes/episode-19.html","no":"19","title":"Unit 6 · song"},{"href":"level-04/episodes/episode-20.html","no":"20","title":"Unit 6 · song"},{"href":"level-04/episodes/episode-21.html","no":"21","title":"Unit 7 · story"},{"href":"level-04/episodes/episode-22.html","no":"22","title":"Unit 7 · story"},{"href":"level-04/episodes/episode-23.html","no":"23","title":"Unit 7 · song"},{"href":"level-04/episodes/episode-24.html","no":"24","title":"Unit 7 · song"},{"href":"level-04/episodes/episode-25.html","no":"25","title":"Unit 8 · story"},{"href":"level-04/episodes/episode-26.html","no":"26","title":"Unit 8 · story"},{"href":"level-04/episodes/episode-27.html","no":"27","title":"Unit 8 · song"},{"href":"level-04/episodes/episode-28.html","no":"28","title":"Unit 8 · song"},{"href":"level-04/episodes/episode-29.html","no":"29","title":"Unit 9 · story"},{"href":"level-04/episodes/episode-30.html","no":"30","title":"Unit 9 · story"},{"href":"level-04/episodes/episode-31.html","no":"31","title":"Unit 9 · song"},{"href":"level-04/episodes/episode-32.html","no":"32","title":"Unit 9 · song"}],"05":[{"href":"level-05/episodes/episode-01.html","no":"01","title":"Unit 1 · lesson"},{"href":"level-05/episodes/episode-02.html","no":"02","title":"Unit 1 · story"},{"href":"level-05/episodes/episode-03.html","no":"03","title":"Unit 1 · song"},{"href":"level-05/episodes/episode-04.html","no":"04","title":"Unit 2 · story"},{"href":"level-05/episodes/episode-05.html","no":"05","title":"Unit 2 · song"},{"href":"level-05/episodes/episode-06.html","no":"06","title":"Unit 3 · story"},{"href":"level-05/episodes/episode-07.html","no":"07","title":"Unit 3 · story"},{"href":"level-05/episodes/episode-08.html","no":"08","title":"Unit 3 · song"},{"href":"level-05/episodes/episode-09.html","no":"09","title":"Unit 3 · song"},{"href":"level-05/episodes/episode-10.html","no":"10","title":"Unit 4 · story"},{"href":"level-05/episodes/episode-11.html","no":"11","title":"Unit 4 · story"},{"href":"level-05/episodes/episode-12.html","no":"12","title":"Unit 4 · song"},{"href":"level-05/episodes/episode-13.html","no":"13","title":"Unit 4 · song"},{"href":"level-05/episodes/episode-14.html","no":"14","title":"Unit 5 · story"},{"href":"level-05/episodes/episode-15.html","no":"15","title":"Unit 5 · story"},{"href":"level-05/episodes/episode-16.html","no":"16","title":"Unit 5 · song"},{"href":"level-05/episodes/episode-17.html","no":"17","title":"Unit 5 · song"},{"href":"level-05/episodes/episode-18.html","no":"18","title":"Unit 6 · story"},{"href":"level-05/episodes/episode-19.html","no":"19","title":"Unit 6 · story"},{"href":"level-05/episodes/episode-20.html","no":"20","title":"Unit 6 · song"},{"href":"level-05/episodes/episode-21.html","no":"21","title":"Unit 6 · song"},{"href":"level-05/episodes/episode-22.html","no":"22","title":"Unit 7 · story"},{"href":"level-05/episodes/episode-23.html","no":"23","title":"Unit 7 · story"},{"href":"level-05/episodes/episode-24.html","no":"24","title":"Unit 7 · song"},{"href":"level-05/episodes/episode-25.html","no":"25","title":"Unit 7 · song"},{"href":"level-05/episodes/episode-26.html","no":"26","title":"Unit 8 · story"},{"href":"level-05/episodes/episode-27.html","no":"27","title":"Unit 8 · story"},{"href":"level-05/episodes/episode-28.html","no":"28","title":"Unit 8 · song"},{"href":"level-05/episodes/episode-29.html","no":"29","title":"Unit 8 · song"},{"href":"level-05/episodes/episode-30.html","no":"30","title":"Unit 9 · story"},{"href":"level-05/episodes/episode-31.html","no":"31","title":"Unit 9 · story"},{"href":"level-05/episodes/episode-32.html","no":"32","title":"Unit 9 · song"},{"href":"level-05/episodes/episode-33.html","no":"33","title":"Unit 9 · song"}],"06":[{"href":"level-06/episodes/episode-01.html","no":"01","title":"Unit 1 · story"},{"href":"level-06/episodes/episode-02.html","no":"02","title":"Unit 1 · song"},{"href":"level-06/episodes/episode-03.html","no":"03","title":"Unit 2 · story"},{"href":"level-06/episodes/episode-04.html","no":"04","title":"Unit 2 · story"},{"href":"level-06/episodes/episode-05.html","no":"05","title":"Unit 2 · song"},{"href":"level-06/episodes/episode-06.html","no":"06","title":"Unit 3 · story"},{"href":"level-06/episodes/episode-07.html","no":"07","title":"Unit 3 · story"},{"href":"level-06/episodes/episode-08.html","no":"08","title":"Unit 3 · song"},{"href":"level-06/episodes/episode-09.html","no":"09","title":"Unit 4 · story"},{"href":"level-06/episodes/episode-10.html","no":"10","title":"Unit 4 · story"},{"href":"level-06/episodes/episode-11.html","no":"11","title":"Unit 4 · song"},{"href":"level-06/episodes/episode-12.html","no":"12","title":"Unit 5 · story"},{"href":"level-06/episodes/episode-13.html","no":"13","title":"Unit 5 · story"},{"href":"level-06/episodes/episode-14.html","no":"14","title":"Unit 5 · song"},{"href":"level-06/episodes/episode-15.html","no":"15","title":"Unit 6 · story"},{"href":"level-06/episodes/episode-16.html","no":"16","title":"Unit 6 · story"},{"href":"level-06/episodes/episode-17.html","no":"17","title":"Unit 6 · song"},{"href":"level-06/episodes/episode-18.html","no":"18","title":"Unit 7 · story"},{"href":"level-06/episodes/episode-19.html","no":"19","title":"Unit 7 · song"},{"href":"level-06/episodes/episode-20.html","no":"20","title":"Unit 8 · story"},{"href":"level-06/episodes/episode-21.html","no":"21","title":"Unit 8 · story"},{"href":"level-06/episodes/episode-22.html","no":"22","title":"Unit 8 · song"},{"href":"level-06/episodes/episode-23.html","no":"23","title":"Unit 9 · story"},{"href":"level-06/episodes/episode-24.html","no":"24","title":"Unit 9 · story"},{"href":"level-06/episodes/episode-25.html","no":"25","title":"Unit 9 · song"}],"07":[{"href":"level-07/episodes/episode-01.html","no":"01","title":"Unit 1 · song"},{"href":"level-07/episodes/episode-02.html","no":"02","title":"Unit 1 · song"},{"href":"level-07/episodes/episode-03.html","no":"03","title":"Unit 1 · story"},{"href":"level-07/episodes/episode-04.html","no":"04","title":"Unit 1 · story"},{"href":"level-07/episodes/episode-05.html","no":"05","title":"Unit 1 · song"},{"href":"level-07/episodes/episode-06.html","no":"06","title":"Unit 3 · story"},{"href":"level-07/episodes/episode-07.html","no":"07","title":"Unit 3 · story"},{"href":"level-07/episodes/episode-08.html","no":"08","title":"Unit 3 · song"},{"href":"level-07/episodes/episode-09.html","no":"09","title":"Unit 4 · story"},{"href":"level-07/episodes/episode-10.html","no":"10","title":"Unit · story"},{"href":"level-07/episodes/episode-11.html","no":"11","title":"Unit 4 · song"},{"href":"level-07/episodes/episode-12.html","no":"12","title":"Unit 5 · story"},{"href":"level-07/episodes/episode-13.html","no":"13","title":"Unit · story"},{"href":"level-07/episodes/episode-14.html","no":"14","title":"Unit 5 · song"},{"href":"level-07/episodes/episode-15.html","no":"15","title":"Unit 6 · story"},{"href":"level-07/episodes/episode-16.html","no":"16","title":"Unit 6 · story"},{"href":"level-07/episodes/episode-17.html","no":"17","title":"Unit 6 · song"},{"href":"level-07/episodes/episode-18.html","no":"18","title":"Unit 7 · story"},{"href":"level-07/episodes/episode-19.html","no":"19","title":"Unit 7 · story"},{"href":"level-07/episodes/episode-20.html","no":"20","title":"Unit 7 · song"},{"href":"level-07/episodes/episode-21.html","no":"21","title":"Unit 8 · story"},{"href":"level-07/episodes/episode-22.html","no":"22","title":"Unit 8 · story"},{"href":"level-07/episodes/episode-23.html","no":"23","title":"Unit 8 · song"},{"href":"level-07/episodes/episode-24.html","no":"24","title":"Unit 9 · story"},{"href":"level-07/episodes/episode-25.html","no":"25","title":"Unit 9 · story"},{"href":"level-07/episodes/episode-26.html","no":"26","title":"Unit 9 · song"}],"08":[{"href":"level-08/episodes/episode-01.html","no":"01","title":"Unit 1 · story"},{"href":"level-08/episodes/episode-02.html","no":"02","title":"Unit 1 · song"},{"href":"level-08/episodes/episode-03.html","no":"03","title":"Unit 2 · story"},{"href":"level-08/episodes/episode-04.html","no":"04","title":"Unit 2 · story"},{"href":"level-08/episodes/episode-05.html","no":"05","title":"Unit 2 · song"},{"href":"level-08/episodes/episode-06.html","no":"06","title":"Unit 3 · story"},{"href":"level-08/episodes/episode-07.html","no":"07","title":"Unit 3 · story"},{"href":"level-08/episodes/episode-08.html","no":"08","title":"Unit 3 · song"},{"href":"level-08/episodes/episode-09.html","no":"09","title":"Unit 4 · story"},{"href":"level-08/episodes/episode-10.html","no":"10","title":"Unit 4 · story"},{"href":"level-08/episodes/episode-11.html","no":"11","title":"Unit 4 · song"},{"href":"level-08/episodes/episode-12.html","no":"12","title":"Unit 5 · story"},{"href":"level-08/episodes/episode-13.html","no":"13","title":"Unit 5 · story"},{"href":"level-08/episodes/episode-14.html","no":"14","title":"Unit 5 · song"},{"href":"level-08/episodes/episode-15.html","no":"15","title":"Unit 6 · story"},{"href":"level-08/episodes/episode-16.html","no":"16","title":"Unit 6 · story"},{"href":"level-08/episodes/episode-17.html","no":"17","title":"Unit 6 · song"},{"href":"level-08/episodes/episode-18.html","no":"18","title":"Unit 7 · story"},{"href":"level-08/episodes/episode-19.html","no":"19","title":"Unit 7 · story"},{"href":"level-08/episodes/episode-20.html","no":"20","title":"Unit 7 · song"},{"href":"level-08/episodes/episode-21.html","no":"21","title":"Unit 8 · story"},{"href":"level-08/episodes/episode-22.html","no":"22","title":"Unit 8 · story"},{"href":"level-08/episodes/episode-23.html","no":"23","title":"Unit 8 · song"},{"href":"level-08/episodes/episode-24.html","no":"24","title":"Unit 9 · story"},{"href":"level-08/episodes/episode-25.html","no":"25","title":"Unit 9 · story"},{"href":"level-08/episodes/episode-26.html","no":"26","title":"Unit 9 · song"}]};
+const offsets=[{label:"今天的新课",offset:0,note:"完整学习"},{label:"近期复习",offset:1,note:"前 1 集"},{label:"间隔复习",offset:3,note:"前 3 集"},{label:"轻量维护",offset:7,note:"前 7 集"}];
+const levelEpisodes=Object.fromEntries(Object.entries(levels).map(([k,v])=>[k,v.map(x=>({ep:Number(x.no),href:x.href,title:x.title}))]));
+const sel=document.getElementById('today-select'); const grid=document.getElementById('today-grid');
+function fill(){sel.innerHTML=levelEpisodes['01'].map((x,i)=>`<option value="${i}">${String(x.ep).padStart(2,'0')} · ${x.title}</option>`).join('');render();}
+function render(){const i=Number(sel.value||0);grid.innerHTML=offsets.map(({label,offset,note})=>{const item=levelEpisodes['01'][i-offset];if(!item)return `<div class="today-item empty"><span class="tag">${label}</span><span class="today-title">尚无对应旧课</span><span class="today-meta">${note}</span></div>`;return `<a class="today-item" href="${item.href}"><span class="tag">${label}</span><span class="today-title">${String(item.ep).padStart(2,'0')} · ${item.title}</span><span class="today-meta">${note} · 点击进入 ›</span></a>`}).join('');}
+sel.addEventListener('change',render);fill();
+</script>
+<script>
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const MATERIAL_MATRIX = [
+  { season:'第1季 Yellow', items:[
+    ['台词本','ready','materials-workbench/level-01-package.json','下载清单 JSON'],
+    ['漫画台词本','ready','materials/comic-transcript/WOW English Yellow Season 1 Comic Transcript.pdf','下载 PDF (113页)'],
+    ['点读包','mute','materials/point-read/season1-manifest.json','下载清单'],
+    ['音频','mute','materials/audio/season1-audio-manifest.json','下载清单'],
+    ['单词卡','ready','materials/wordcards/WOW English Yellow Level 1 Word Cards.pdf','下载 PDF (51页)'],
+    ['打卡表','ready','materials/downloads/WOW Yellow Level 1 Daily Check-in.pdf','下载 PDF'],
+    ['思维导图','ready','materials/mindmaps/yellow-mindmap-page-001.jpg','下载 JPG'],
+    ['亲子拓展','ready','materials/parent-extension/WOW English Season 1 Parent Extension.pdf','下载 PDF (33页)'],
+    ['小测','ready','materials/tests/WOW English Level 1 Vocabulary Tests.pdf','下载 PDF (5页)'],
+    ['学习计划表','mute','materials/plans/level1-plan-manifest.json','下载清单'],
+  ]},
+  { season:'第2季 Blue', items:[
+    ['台词本','ready','level-02/audio-manifest.json','查看音频清单'],
+    ['漫画台词本','ready','materials/comic-transcript/WOW English Blue Level 2 Comic Transcript.pdf','下载 PDF (22页)'],
+    ['点读包','mute','','需网盘客户端'],
+    ['音频','mute','level-02/audio-manifest.json','下载清单'],
+    ['单词卡','ready','','—'],
+    ['打卡表','ready','materials/downloads/WOW Blue Level 2 Daily Check-in.pdf','下载 PDF'],
+    ['思维导图','mute','','待取'],
+    ['亲子拓展','mute','','待取'],
+    ['小测','mute','','待取'],
+    ['学习计划表','mute','materials/plans/level1-plan-manifest.json','下载清单'],
+  ]},
+  { season:'第3季 Red', items:[
+    ['台词本','ready','','已接入详情页'],
+    ['漫画台词本','ready','materials/comic-transcript/WOW English Red Level 3 Comic Transcript.pdf','下载 PDF (129页)'],
+    ['点读包','mute','','需网盘客户端'],
+    ['音频','mute','level-03/audio-manifest.json','下载清单'],
+    ['单词卡','ready','','—'],
+    ['打卡表','ready','materials/downloads/WOW Red Level 3 Daily Check-in.pdf','下载 PDF'],
+    ['思维导图','mute','','待取'],
+    ['亲子拓展','ready','','—'],
+    ['小测','mute','','待取'],
+    ['学习计划表','mute','materials/plans/level1-plan-manifest.json','下载清单'],
+  ]},
+  { season:'第4季 Green', items:[
+    ['台词本','ready','','已接入详情页'],
+    ['漫画台词本','ready','materials/comic-transcript/WOW English Green Level 4 Comic Transcript.pdf','下载 PDF (137页)'],
+    ['点读包','ready','','—'],
+    ['音频','mute','level-04/audio-manifest.json','下载清单'],
+    ['单词卡','ready','','—'],
+    ['打卡表','ready','materials/downloads/WOW Green Level 4 Daily Check-in.pdf','下载 PDF'],
+    ['思维导图','ready','','—'],
+    ['亲子拓展','mute','','待取'],
+    ['小测','mute','','待取'],
+    ['学习计划表','mute','materials/plans/level1-plan-manifest.json','下载清单'],
+  ]},
+  { season:'第5季 Orange', items:[
+    ['台词本','ready','','已接入详情页'],
+    ['漫画台词本','ready','materials/comic-transcript/WOW English Orange Level 5 Comic Transcript.pdf','下载 PDF (147页)'],
+    ['点读包','mute','','—'],
+    ['音频','mute','level-05/audio-manifest.json','下载清单'],
+    ['单词卡','ready','','—'],
+    ['打卡表','partial','level-05/level-package.html','21/33重点图'],
+    ['思维导图','mute','','—'],
+    ['亲子拓展','mute','','—'],
+    ['小测','mute','','待取'],
+    ['学习计划表','mute','materials/plans/level1-plan-manifest.json','下载清单'],
+  ]},
+  { season:'第6季 Bronze', items:[
+    ['台词本','ready','','已接入详情页'],
+    ['漫画台词本','mute','','—'],
+    ['点读包','mute','','—'],
+    ['音频','mute','level-06/audio-manifest.json','下载清单'],
+    ['单词卡','ready','','—'],
+    ['打卡表','mute','','—'],
+    ['思维导图','mute','','—'],
+    ['亲子拓展','mute','','—'],
+    ['小测','mute','','待取'],
+    ['学习计划表','mute','','—'],
+  ]},
+  { season:'第7季 Silver', items:[
+    ['台词本','ready','','已接入详情页'],
+    ['漫画台词本','mute','','—'],
+    ['点读包','mute','','—'],
+    ['音频','mute','level-07/audio-manifest.json','下载清单'],
+    ['单词卡','mute','','—'],
+    ['打卡表','mute','','—'],
+    ['思维导图','mute','','—'],
+    ['亲子拓展','mute','','—'],
+    ['小测','mute','','待取'],
+    ['学习计划表','mute','','—'],
+  ]},
+  { season:'第8季 Gold', items:[
+    ['台词本','ready','','已接入详情页'],
+    ['漫画台词本','mute','','—'],
+    ['点读包','mute','','—'],
+    ['音频','mute','level-08/audio-manifest.json','下载清单'],
+    ['单词卡','mute','','—'],
+    ['打卡表','mute','','—'],
+    ['思维导图','mute','','—'],
+    ['亲子拓展','mute','','—'],
+    ['小测','mute','','待取'],
+    ['学习计划表','mute','','—'],
+  ]},
+];
+function renderMaterialTab(i){
+  const t=document.getElementById('material-tabs');
+  t.innerHTML=MATERIAL_MATRIX.map((m,idx)=>`<button class="tab ${idx===i?'active':''}" data-i="${idx}">${esc(m.season)}</button>`).join('');
+  t.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>renderMaterialTab(Number(btn.dataset.i))));
+  const rows=MATERIAL_MATRIX[i].items.map(([name,status,href,label])=>{
+    const pill={ready:'可下载',partial:'部分',mute:'—'}[status];
+    const cls={ready:'',partial:'warn',mute:'mute'}[status];
+    const action=href?`<a href="${esc(href)}" ${status==='ready'?'download':''}>${esc(label)}</a>`:`<span class="muted">${esc(label)}</span>`;
+    return `<tr><td>${esc(name)}</td><td><span class="pill ${cls}">${pill}</span></td><td>${action}</td></tr>`;
+  }).join('');
+  document.getElementById('material-panel').innerHTML=`<div style="overflow:auto;border:1px solid var(--line);border-radius:8px;background:#fff"><table class="material-table"><thead><tr><th>资料</th><th>状态</th><th>操作</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+}
+renderMaterialTab(0);
+
+const pad=n=>String(n).padStart(2,'0');
+const modal=document.getElementById('method-modal');
+document.getElementById('open-method').addEventListener('click',()=>modal.classList.add('open'));
+modal.addEventListener('click',e=>{if(e.target===modal||e.target.closest('.modal-close'))modal.classList.remove('open')});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')modal.classList.remove('open')});
+
+
+</script>
+</body></html>

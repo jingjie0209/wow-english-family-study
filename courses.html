@@ -1,0 +1,1456 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>WOW English 全部课程</title>
+    <style>
+      * { box-sizing: border-box; }
+      html, body {
+        margin: 0;
+        min-width: 320px;
+        background: #fff;
+        color: #1d1d1f;
+        font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+      }
+      button, select { font: inherit; }
+      main { width: 1080px; max-width: 100%; margin: 0 auto; }
+      .hero { padding: 0 36px 34px; border-bottom: 1px solid #dedee2; }
+      .brand-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 48px;
+        border-bottom: 1px solid #ededee;
+      }
+      .brand { margin: 0; font-size: 12px; font-weight: 800; }
+      .brand-wow { color: #164d3c; }
+      .brand-english { color: #6e6e73; font-weight: 500; }
+      .top-nav { display: flex; align-items: center; gap: 18px; }
+      .top-nav a { color: #62666a; font-size: 12px; font-weight: 650; text-decoration: none; }
+      .top-nav a[aria-current="page"] { color: #17604d; }
+      .hero-copy { padding-top: 34px; }
+      .eyebrow { margin: 0 0 8px; color: #17604d; font-size: 13px; font-weight: 750; }
+      h1 { margin: 0; font-size: 38px; line-height: 1.15; letter-spacing: 0; }
+      .hero-intro { max-width: 620px; margin: 13px 0 0; color: #5f6460; font-size: 15px; line-height: 1.7; }
+      .page-layout { display: grid; grid-template-columns: 178px minmax(0, 1fr); align-items: start; }
+      .side-menu { position: sticky; top: 18px; padding: 30px 18px 30px 28px; }
+      .side-menu-title { margin: 0 0 12px; color: #969b98; font-size: 11px; font-weight: 800; letter-spacing: .04em; }
+      .side-menu a { display: block; padding: 10px 10px; border-left: 2px solid transparent; color: #626a65; font-size: 13px; line-height: 1.3; text-decoration: none; }
+      .side-menu a:hover, .side-menu a:focus { border-left-color: #17604d; background: #f4f8f5; color: #17604d; }
+      .content-column { min-width: 0; }
+      section { padding: 34px 50px; border-bottom: 1px solid #ededee; }
+      h2 { margin: 0 0 20px; font-size: 25px; line-height: 1.25; letter-spacing: 0; }
+      .method-flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+      .method-step { min-width: 0; padding: 15px 14px; border-top: 3px solid #17604d; background: #f7f8f7; }
+      .method-step:nth-child(2) { border-top-color: #c28b16; }
+      .method-step:nth-child(3) { border-top-color: #2978a0; }
+      .method-step:nth-child(4) { border-top-color: #7b5b9a; }
+      .method-step b { display: block; margin-bottom: 5px; font-size: 15px; }
+      .method-step span { color: #636965; font-size: 12px; line-height: 1.55; }
+      .method-note { margin: 16px 0 0; color: #5e645f; font-size: 13px; line-height: 1.7; }
+      .method-note strong { color: #2e3832; }
+      .planner { background: #fafafa; }
+      .planner-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 18px; }
+      label { display: grid; gap: 7px; color: #4f5752; font-size: 12px; font-weight: 700; }
+      select {
+        width: 100%;
+        height: 42px;
+        padding: 0 34px 0 12px;
+        border: 1px solid #cfd5d1;
+        border-radius: 5px;
+        background: #fff;
+        color: #1d1d1f;
+      }
+      .today-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+      .today-item {
+        display: flex;
+        flex-direction: column;
+        min-height: 132px;
+        padding: 14px;
+        border: 1px solid #d9dedb;
+        border-radius: 6px;
+        background: #fff;
+        color: inherit;
+        text-decoration: none;
+      }
+      .today-item:hover { border-color: #17604d; }
+      .today-item.is-empty { pointer-events: none; opacity: .42; }
+      .today-tag { color: #17604d; font-size: 11px; font-weight: 800; }
+      .today-title { margin-top: 9px; font-size: 13px; line-height: 1.45; font-weight: 700; }
+      .today-meta { margin-top: auto; padding-top: 12px; color: #777d79; font-size: 11px; }
+      .practice-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0 26px; margin-top: 22px; }
+      .practice-row { display: flex; gap: 12px; padding: 12px 0; border-top: 1px solid #e4e6e5; }
+      .practice-row b { flex: 0 0 62px; color: #17604d; font-size: 12px; }
+      .practice-row span { color: #545b56; font-size: 12px; line-height: 1.55; }
+      .course-menu { padding-bottom: 48px; }
+      .course-intro { margin: -8px 0 18px; color: #656b67; font-size: 13px; line-height: 1.6; }
+      .level-detail { margin: 0 0 10px; border: 1px solid #dce1de; border-left: 3px solid #17604d; }
+      .level-detail summary {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 115px 18px;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 16px;
+        color: #17604d;
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: 800;
+        list-style: none;
+      }
+      .level-detail summary::-webkit-details-marker { display: none; }
+      .level-detail summary::after { content: "⌄"; font-size: 18px; line-height: 1; }
+      .level-detail[open] summary::after { content: "⌃"; }
+      .detail-count { color: #6d746f; font-size: 12px; font-weight: 500; text-align: left; white-space: nowrap; }
+      .episode-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 12px; padding: 0 12px 12px; }
+      .episode-card {
+        display: flex;
+        align-items: center;
+        min-width: 0;
+        gap: 9px;
+        padding: 10px;
+        border: 1px solid #e2e6e3;
+        color: inherit;
+        text-decoration: none;
+      }
+      .episode-card:hover { border-color: #17604d; background: #f6faf8; }
+      .episode-no {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 28px;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: #e8f1ec;
+        color: #17604d;
+        font-size: 11px;
+        font-weight: 800;
+      }
+      .episode-title { min-width: 0; overflow: hidden; font-size: 12px; text-overflow: ellipsis; white-space: nowrap; }
+      .episode-arrow { margin-left: auto; color: #17604d; font-size: 18px; }
+      @media (max-width: 680px) {
+        .hero { padding: 0 20px 28px; }
+        section { padding: 28px 20px; }
+        .page-layout { grid-template-columns: 128px minmax(0, 1fr); }
+        .side-menu { padding: 24px 8px 24px 14px; }
+        .side-menu a { padding: 9px 7px; font-size: 12px; }
+        h1 { font-size: 32px; }
+        .method-flow, .today-grid { grid-template-columns: 1fr 1fr; }
+        .planner-controls, .practice-list, .episode-grid { grid-template-columns: 1fr; }
+        .level-detail summary { grid-template-columns: minmax(0, 1fr) 92px 18px; gap: 7px; }
+      }
+      @media (max-width: 390px) {
+        .top-nav { gap: 12px; }
+        .page-layout { grid-template-columns: 112px minmax(0, 1fr); }
+        .side-menu { padding-left: 8px; padding-right: 5px; }
+        .side-menu a { padding-left: 5px; padding-right: 4px; font-size: 11px; }
+        .method-flow, .today-grid { grid-template-columns: 1fr; }
+        .today-item { min-height: 104px; }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header class="hero">
+        <div class="brand-bar">
+          <p class="brand"><span class="brand-wow">WOW</span> <span class="brand-english">ENGLISH</span></p>
+          <nav class="top-nav" aria-label="主菜单"><a href="home.html">课程菜单</a><a href="study-method.html">学习方法</a><a href="materials-matrix.html">资料对照</a></nav>
+        </div>
+        <div class="hero-copy">
+          <p class="eyebrow">ALL COURSES · LEVEL 1–8</p>
+          <h1>全部课程</h1>
+          <p class="hero-intro">按级别展开课程目录，点击任意一集进入对应教材重点、详细内容与台词页面。</p>
+        </div>
+      </header>
+      <div class="page-layout">
+        <aside class="side-menu" aria-label="学习方法菜单"><p class="side-menu-title">学习导航</p><a href="study-method.html">学习方法</a><a href="today.html">今天学什么</a><a href="courses.html" aria-current="page">全部课程</a></aside>
+        <div class="content-column">
+          <section class="course-menu" aria-labelledby="courses-title">
+        <h2 id="courses-title">全部课程入口</h2>
+        <p class="course-intro">按级别展开，点击任意一集即可进入对应教材重点、详细内容与台词页面。</p>
+        
+      <details class="level-detail" data-level="01" open>
+        <summary>
+          <span>第一级 · 黄色 · Wow! Yellow</span>
+          <span class="detail-count">3–4岁 · 33 集</span>
+        </summary>
+        <div class="episode-grid">
+          
+            <a class="episode-card" href="episodes/episode-01.html">
+              <span class="episode-no">01</span>
+              <span class="episode-title">Unit 1 hello · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="episodes/episode-02.html">
+              <span class="episode-no">02</span>
+              <span class="episode-title">Unit 1 hello · song1</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="episodes/episode-03.html">
+              <span class="episode-no">03</span>
+              <span class="episode-title">Unit 1 hello · song2</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="episodes/episode-04.html">
+              <span class="episode-no">04</span>
+              <span class="episode-title">Unit 2 colour · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="episodes/episode-05.html">
+              <span class="episode-no">05</span>
+              <span class="episode-title">Unit 2 colour · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="episodes/episode-06.html">
+              <span class="episode-no">06</span>
+              <span class="episode-title">Unit 3 garden - part 1 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="episodes/episode-07.html">
+              <span class="episode-no">07</span>
+              <span class="episode-title">Unit 3 garden - part 1 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="episodes/episode-08.html">
+              <span class="episode-no">08</span>
+              <span class="episode-title">Unit 3 garden - part 2 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="episodes/episode-09.html">
+              <span class="episode-no">09</span>
+              <span class="episode-title">Unit 3 garden - part 2 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="episodes/episode-10.html">
+              <span class="episode-no">10</span>
+              <span class="episode-title">Unit 4 toys- part 1 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="episodes/episode-11.html">
+              <span class="episode-no">11</span>
+              <span class="episode-title">Unit 4 toys- part 1 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="episodes/episode-12.html">
+              <span class="episode-no">12</span>
+              <span class="episode-title">Unit 4 'toys' - part 2 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="episodes/episode-13.html">
+              <span class="episode-no">13</span>
+              <span class="episode-title">Unit 4 'toys' - part 2 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="episodes/episode-14.html">
+              <span class="episode-no">14</span>
+              <span class="episode-title">Unit 5 'body' - part 1 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="episodes/episode-15.html">
+              <span class="episode-no">15</span>
+              <span class="episode-title">Unit 5 'body' - part 1 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="episodes/episode-16.html">
+              <span class="episode-no">16</span>
+              <span class="episode-title">Unit 5 'body' - part 2 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="episodes/episode-17.html">
+              <span class="episode-no">17</span>
+              <span class="episode-title">Unit 5 'body' - part 2 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="episodes/episode-18.html">
+              <span class="episode-no">18</span>
+              <span class="episode-title">Unit 6 'food' - part 1 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="episodes/episode-19.html">
+              <span class="episode-no">19</span>
+              <span class="episode-title">Unit 6 'food' - part 1 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="episodes/episode-20.html">
+              <span class="episode-no">20</span>
+              <span class="episode-title">Unit 6 'food' - part 2 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="episodes/episode-21.html">
+              <span class="episode-no">21</span>
+              <span class="episode-title">Unit 6 'food' - part 2 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="episodes/episode-22.html">
+              <span class="episode-no">22</span>
+              <span class="episode-title">Unit 7 'bugs' - part 1 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="episodes/episode-23.html">
+              <span class="episode-no">23</span>
+              <span class="episode-title">Unit 7 'bugs' - part 1 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="episodes/episode-24.html">
+              <span class="episode-no">24</span>
+              <span class="episode-title">Unit 7 bugs - part 2 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="episodes/episode-25.html">
+              <span class="episode-no">25</span>
+              <span class="episode-title">Unit 7 bugs - part 2 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="episodes/episode-26.html">
+              <span class="episode-no">26</span>
+              <span class="episode-title">Unit 8 'feelings' - part 1 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="episodes/episode-27.html">
+              <span class="episode-no">27</span>
+              <span class="episode-title">Unit 8 'feelings' - part 1 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="episodes/episode-28.html">
+              <span class="episode-no">28</span>
+              <span class="episode-title">Unit 8 'feelings' - part 2 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="episodes/episode-29.html">
+              <span class="episode-no">29</span>
+              <span class="episode-title">Unit 8 'feelings' - part 2 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="episodes/episode-30.html">
+              <span class="episode-no">30</span>
+              <span class="episode-title">Unit 9 'clothes' - part 1 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="episodes/episode-31.html">
+              <span class="episode-no">31</span>
+              <span class="episode-title">Unit 9 'clothes' - part 1 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="episodes/episode-32.html">
+              <span class="episode-no">32</span>
+              <span class="episode-title">Unit 9 'clothes' - part 2 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="episodes/episode-33.html">
+              <span class="episode-no">33</span>
+              <span class="episode-title">Unit 9 'clothes' - part 2 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+        </div>
+      </details>
+      <details class="level-detail" data-level="02">
+        <summary>
+          <span>第二级 · 蓝色 · Wow! Blue</span>
+          <span class="detail-count">4–6岁 · 33 集</span>
+        </summary>
+        <div class="episode-grid">
+          
+            <a class="episode-card" href="level-02/episodes/episode-01.html">
+              <span class="episode-no">01</span>
+              <span class="episode-title">Unit 1 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-02/episodes/episode-02.html">
+              <span class="episode-no">02</span>
+              <span class="episode-title">Unit 1 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-02/episodes/episode-03.html">
+              <span class="episode-no">03</span>
+              <span class="episode-title">Unit 1 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-02/episodes/episode-04.html">
+              <span class="episode-no">04</span>
+              <span class="episode-title">Unit 2 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-02/episodes/episode-05.html">
+              <span class="episode-no">05</span>
+              <span class="episode-title">Unit 2 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-02/episodes/episode-06.html">
+              <span class="episode-no">06</span>
+              <span class="episode-title">Unit 3 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-02/episodes/episode-07.html">
+              <span class="episode-no">07</span>
+              <span class="episode-title">Unit 3 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-02/episodes/episode-08.html">
+              <span class="episode-no">08</span>
+              <span class="episode-title">Unit 3 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-02/episodes/episode-09.html">
+              <span class="episode-no">09</span>
+              <span class="episode-title">Unit 3 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-02/episodes/episode-10.html">
+              <span class="episode-no">10</span>
+              <span class="episode-title">Unit 4 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-02/episodes/episode-11.html">
+              <span class="episode-no">11</span>
+              <span class="episode-title">Unit 4 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-02/episodes/episode-12.html">
+              <span class="episode-no">12</span>
+              <span class="episode-title">Unit 4 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-02/episodes/episode-13.html">
+              <span class="episode-no">13</span>
+              <span class="episode-title">Unit 4 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-02/episodes/episode-14.html">
+              <span class="episode-no">14</span>
+              <span class="episode-title">Unit 5 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-02/episodes/episode-15.html">
+              <span class="episode-no">15</span>
+              <span class="episode-title">Unit 5 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-02/episodes/episode-16.html">
+              <span class="episode-no">16</span>
+              <span class="episode-title">Unit 5 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-02/episodes/episode-17.html">
+              <span class="episode-no">17</span>
+              <span class="episode-title">Unit 5 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-02/episodes/episode-18.html">
+              <span class="episode-no">18</span>
+              <span class="episode-title">Unit 6 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-02/episodes/episode-19.html">
+              <span class="episode-no">19</span>
+              <span class="episode-title">Unit 6 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-02/episodes/episode-20.html">
+              <span class="episode-no">20</span>
+              <span class="episode-title">Unit 6 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-02/episodes/episode-21.html">
+              <span class="episode-no">21</span>
+              <span class="episode-title">Unit 6 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-02/episodes/episode-22.html">
+              <span class="episode-no">22</span>
+              <span class="episode-title">Unit 7 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-02/episodes/episode-23.html">
+              <span class="episode-no">23</span>
+              <span class="episode-title">Unit 7 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-02/episodes/episode-24.html">
+              <span class="episode-no">24</span>
+              <span class="episode-title">Unit 7 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-02/episodes/episode-25.html">
+              <span class="episode-no">25</span>
+              <span class="episode-title">Unit 7 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-02/episodes/episode-26.html">
+              <span class="episode-no">26</span>
+              <span class="episode-title">Unit 8 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-02/episodes/episode-27.html">
+              <span class="episode-no">27</span>
+              <span class="episode-title">Unit 8 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-02/episodes/episode-28.html">
+              <span class="episode-no">28</span>
+              <span class="episode-title">Unit 8 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-02/episodes/episode-29.html">
+              <span class="episode-no">29</span>
+              <span class="episode-title">Unit 8 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-02/episodes/episode-30.html">
+              <span class="episode-no">30</span>
+              <span class="episode-title">Unit 9 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-02/episodes/episode-31.html">
+              <span class="episode-no">31</span>
+              <span class="episode-title">Unit 9 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-02/episodes/episode-32.html">
+              <span class="episode-no">32</span>
+              <span class="episode-title">Unit 9 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-02/episodes/episode-33.html">
+              <span class="episode-no">33</span>
+              <span class="episode-title">Unit 9 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+        </div>
+      </details>
+      <details class="level-detail" data-level="03">
+        <summary>
+          <span>第三级 · 红色 · Wow! Red</span>
+          <span class="detail-count">5–6岁 · 33 集</span>
+        </summary>
+        <div class="episode-grid">
+          
+            <a class="episode-card" href="level-03/episodes/episode-01.html">
+              <span class="episode-no">01</span>
+              <span class="episode-title">Unit 1 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-03/episodes/episode-02.html">
+              <span class="episode-no">02</span>
+              <span class="episode-title">Unit 1 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-03/episodes/episode-03.html">
+              <span class="episode-no">03</span>
+              <span class="episode-title">Unit 1 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-03/episodes/episode-04.html">
+              <span class="episode-no">04</span>
+              <span class="episode-title">Unit 2 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-03/episodes/episode-05.html">
+              <span class="episode-no">05</span>
+              <span class="episode-title">Unit 2 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-03/episodes/episode-06.html">
+              <span class="episode-no">06</span>
+              <span class="episode-title">Unit 3 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-03/episodes/episode-07.html">
+              <span class="episode-no">07</span>
+              <span class="episode-title">Unit 3 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-03/episodes/episode-08.html">
+              <span class="episode-no">08</span>
+              <span class="episode-title">Unit 3 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-03/episodes/episode-09.html">
+              <span class="episode-no">09</span>
+              <span class="episode-title">Unit 3 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-03/episodes/episode-10.html">
+              <span class="episode-no">10</span>
+              <span class="episode-title">Unit 4 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-03/episodes/episode-11.html">
+              <span class="episode-no">11</span>
+              <span class="episode-title">Unit 4 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-03/episodes/episode-12.html">
+              <span class="episode-no">12</span>
+              <span class="episode-title">Unit 4 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-03/episodes/episode-13.html">
+              <span class="episode-no">13</span>
+              <span class="episode-title">Unit 4 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-03/episodes/episode-14.html">
+              <span class="episode-no">14</span>
+              <span class="episode-title">Unit 5 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-03/episodes/episode-15.html">
+              <span class="episode-no">15</span>
+              <span class="episode-title">Unit 5 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-03/episodes/episode-16.html">
+              <span class="episode-no">16</span>
+              <span class="episode-title">Unit 5 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-03/episodes/episode-17.html">
+              <span class="episode-no">17</span>
+              <span class="episode-title">Unit 5 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-03/episodes/episode-18.html">
+              <span class="episode-no">18</span>
+              <span class="episode-title">Unit 6 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-03/episodes/episode-19.html">
+              <span class="episode-no">19</span>
+              <span class="episode-title">Unit 6 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-03/episodes/episode-20.html">
+              <span class="episode-no">20</span>
+              <span class="episode-title">Unit 6 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-03/episodes/episode-21.html">
+              <span class="episode-no">21</span>
+              <span class="episode-title">Unit 6 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-03/episodes/episode-22.html">
+              <span class="episode-no">22</span>
+              <span class="episode-title">Unit 7 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-03/episodes/episode-23.html">
+              <span class="episode-no">23</span>
+              <span class="episode-title">Unit 7 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-03/episodes/episode-24.html">
+              <span class="episode-no">24</span>
+              <span class="episode-title">Unit 7 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-03/episodes/episode-25.html">
+              <span class="episode-no">25</span>
+              <span class="episode-title">Unit 7 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-03/episodes/episode-26.html">
+              <span class="episode-no">26</span>
+              <span class="episode-title">Unit 8 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-03/episodes/episode-27.html">
+              <span class="episode-no">27</span>
+              <span class="episode-title">Unit 8 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-03/episodes/episode-28.html">
+              <span class="episode-no">28</span>
+              <span class="episode-title">Unit 8 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-03/episodes/episode-29.html">
+              <span class="episode-no">29</span>
+              <span class="episode-title">Unit 8 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-03/episodes/episode-30.html">
+              <span class="episode-no">30</span>
+              <span class="episode-title">Unit 9 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-03/episodes/episode-31.html">
+              <span class="episode-no">31</span>
+              <span class="episode-title">Unit 9 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-03/episodes/episode-32.html">
+              <span class="episode-no">32</span>
+              <span class="episode-title">Unit 9 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-03/episodes/episode-33.html">
+              <span class="episode-no">33</span>
+              <span class="episode-title">Unit 9 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+        </div>
+      </details>
+      <details class="level-detail" data-level="04">
+        <summary>
+          <span>第四级 · 绿色 · Wow! Green</span>
+          <span class="detail-count">6–7岁 · 32 集</span>
+        </summary>
+        <div class="episode-grid">
+          
+            <a class="episode-card" href="level-04/episodes/episode-01.html">
+              <span class="episode-no">01</span>
+              <span class="episode-title">Unit 1 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-04/episodes/episode-02.html">
+              <span class="episode-no">02</span>
+              <span class="episode-title">Unit 1 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-04/episodes/episode-03.html">
+              <span class="episode-no">03</span>
+              <span class="episode-title">Unit 2 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-04/episodes/episode-04.html">
+              <span class="episode-no">04</span>
+              <span class="episode-title">Unit 2 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-04/episodes/episode-05.html">
+              <span class="episode-no">05</span>
+              <span class="episode-title">Unit 3 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-04/episodes/episode-06.html">
+              <span class="episode-no">06</span>
+              <span class="episode-title">Unit 3 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-04/episodes/episode-07.html">
+              <span class="episode-no">07</span>
+              <span class="episode-title">Unit 3 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-04/episodes/episode-08.html">
+              <span class="episode-no">08</span>
+              <span class="episode-title">Unit 3 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-04/episodes/episode-09.html">
+              <span class="episode-no">09</span>
+              <span class="episode-title">Unit 4 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-04/episodes/episode-10.html">
+              <span class="episode-no">10</span>
+              <span class="episode-title">Unit 4 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-04/episodes/episode-11.html">
+              <span class="episode-no">11</span>
+              <span class="episode-title">Unit 4 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-04/episodes/episode-12.html">
+              <span class="episode-no">12</span>
+              <span class="episode-title">Unit 4 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-04/episodes/episode-13.html">
+              <span class="episode-no">13</span>
+              <span class="episode-title">Unit 5 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-04/episodes/episode-14.html">
+              <span class="episode-no">14</span>
+              <span class="episode-title">Unit 5 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-04/episodes/episode-15.html">
+              <span class="episode-no">15</span>
+              <span class="episode-title">Unit 5 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-04/episodes/episode-16.html">
+              <span class="episode-no">16</span>
+              <span class="episode-title">Unit 5 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-04/episodes/episode-17.html">
+              <span class="episode-no">17</span>
+              <span class="episode-title">Unit 6 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-04/episodes/episode-18.html">
+              <span class="episode-no">18</span>
+              <span class="episode-title">Unit 6 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-04/episodes/episode-19.html">
+              <span class="episode-no">19</span>
+              <span class="episode-title">Unit 6 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-04/episodes/episode-20.html">
+              <span class="episode-no">20</span>
+              <span class="episode-title">Unit 6 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-04/episodes/episode-21.html">
+              <span class="episode-no">21</span>
+              <span class="episode-title">Unit 7 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-04/episodes/episode-22.html">
+              <span class="episode-no">22</span>
+              <span class="episode-title">Unit 7 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-04/episodes/episode-23.html">
+              <span class="episode-no">23</span>
+              <span class="episode-title">Unit 7 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-04/episodes/episode-24.html">
+              <span class="episode-no">24</span>
+              <span class="episode-title">Unit 7 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-04/episodes/episode-25.html">
+              <span class="episode-no">25</span>
+              <span class="episode-title">Unit 8 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-04/episodes/episode-26.html">
+              <span class="episode-no">26</span>
+              <span class="episode-title">Unit 8 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-04/episodes/episode-27.html">
+              <span class="episode-no">27</span>
+              <span class="episode-title">Unit 8 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-04/episodes/episode-28.html">
+              <span class="episode-no">28</span>
+              <span class="episode-title">Unit 8 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-04/episodes/episode-29.html">
+              <span class="episode-no">29</span>
+              <span class="episode-title">Unit 9 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-04/episodes/episode-30.html">
+              <span class="episode-no">30</span>
+              <span class="episode-title">Unit 9 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-04/episodes/episode-31.html">
+              <span class="episode-no">31</span>
+              <span class="episode-title">Unit 9 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-04/episodes/episode-32.html">
+              <span class="episode-no">32</span>
+              <span class="episode-title">Unit 9 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+        </div>
+      </details>
+      <details class="level-detail" data-level="05">
+        <summary>
+          <span>第五级 · 橘色 · Wow! Orange</span>
+          <span class="detail-count">7–8岁 · 33 集</span>
+        </summary>
+        <div class="episode-grid">
+          
+            <a class="episode-card" href="level-05/episodes/episode-01.html">
+              <span class="episode-no">01</span>
+              <span class="episode-title">Unit 1 · lesson</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-05/episodes/episode-02.html">
+              <span class="episode-no">02</span>
+              <span class="episode-title">Unit 1 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-05/episodes/episode-03.html">
+              <span class="episode-no">03</span>
+              <span class="episode-title">Unit 1 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-05/episodes/episode-04.html">
+              <span class="episode-no">04</span>
+              <span class="episode-title">Unit 2 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-05/episodes/episode-05.html">
+              <span class="episode-no">05</span>
+              <span class="episode-title">Unit 2 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-05/episodes/episode-06.html">
+              <span class="episode-no">06</span>
+              <span class="episode-title">Unit 3 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-05/episodes/episode-07.html">
+              <span class="episode-no">07</span>
+              <span class="episode-title">Unit 3 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-05/episodes/episode-08.html">
+              <span class="episode-no">08</span>
+              <span class="episode-title">Unit 3 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-05/episodes/episode-09.html">
+              <span class="episode-no">09</span>
+              <span class="episode-title">Unit 3 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-05/episodes/episode-10.html">
+              <span class="episode-no">10</span>
+              <span class="episode-title">Unit 4 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-05/episodes/episode-11.html">
+              <span class="episode-no">11</span>
+              <span class="episode-title">Unit 4 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-05/episodes/episode-12.html">
+              <span class="episode-no">12</span>
+              <span class="episode-title">Unit 4 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-05/episodes/episode-13.html">
+              <span class="episode-no">13</span>
+              <span class="episode-title">Unit 4 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-05/episodes/episode-14.html">
+              <span class="episode-no">14</span>
+              <span class="episode-title">Unit 5 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-05/episodes/episode-15.html">
+              <span class="episode-no">15</span>
+              <span class="episode-title">Unit 5 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-05/episodes/episode-16.html">
+              <span class="episode-no">16</span>
+              <span class="episode-title">Unit 5 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-05/episodes/episode-17.html">
+              <span class="episode-no">17</span>
+              <span class="episode-title">Unit 5 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-05/episodes/episode-18.html">
+              <span class="episode-no">18</span>
+              <span class="episode-title">Unit 6 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-05/episodes/episode-19.html">
+              <span class="episode-no">19</span>
+              <span class="episode-title">Unit 6 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-05/episodes/episode-20.html">
+              <span class="episode-no">20</span>
+              <span class="episode-title">Unit 6 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-05/episodes/episode-21.html">
+              <span class="episode-no">21</span>
+              <span class="episode-title">Unit 6 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-05/episodes/episode-22.html">
+              <span class="episode-no">22</span>
+              <span class="episode-title">Unit 7 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-05/episodes/episode-23.html">
+              <span class="episode-no">23</span>
+              <span class="episode-title">Unit 7 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-05/episodes/episode-24.html">
+              <span class="episode-no">24</span>
+              <span class="episode-title">Unit 7 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-05/episodes/episode-25.html">
+              <span class="episode-no">25</span>
+              <span class="episode-title">Unit 7 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-05/episodes/episode-26.html">
+              <span class="episode-no">26</span>
+              <span class="episode-title">Unit 8 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-05/episodes/episode-27.html">
+              <span class="episode-no">27</span>
+              <span class="episode-title">Unit 8 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-05/episodes/episode-28.html">
+              <span class="episode-no">28</span>
+              <span class="episode-title">Unit 8 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-05/episodes/episode-29.html">
+              <span class="episode-no">29</span>
+              <span class="episode-title">Unit 8 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-05/episodes/episode-30.html">
+              <span class="episode-no">30</span>
+              <span class="episode-title">Unit 9 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-05/episodes/episode-31.html">
+              <span class="episode-no">31</span>
+              <span class="episode-title">Unit 9 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-05/episodes/episode-32.html">
+              <span class="episode-no">32</span>
+              <span class="episode-title">Unit 9 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-05/episodes/episode-33.html">
+              <span class="episode-no">33</span>
+              <span class="episode-title">Unit 9 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+        </div>
+      </details>
+      <details class="level-detail" data-level="06">
+        <summary>
+          <span>第六级 · 青铜 · Wow! Bronze</span>
+          <span class="detail-count">8–9岁 · 25 集</span>
+        </summary>
+        <div class="episode-grid">
+          
+            <a class="episode-card" href="level-06/episodes/episode-01.html">
+              <span class="episode-no">01</span>
+              <span class="episode-title">Unit 1 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-06/episodes/episode-02.html">
+              <span class="episode-no">02</span>
+              <span class="episode-title">Unit 1 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-06/episodes/episode-03.html">
+              <span class="episode-no">03</span>
+              <span class="episode-title">Unit 2 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-06/episodes/episode-04.html">
+              <span class="episode-no">04</span>
+              <span class="episode-title">Unit 2 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-06/episodes/episode-05.html">
+              <span class="episode-no">05</span>
+              <span class="episode-title">Unit 2 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-06/episodes/episode-06.html">
+              <span class="episode-no">06</span>
+              <span class="episode-title">Unit 3 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-06/episodes/episode-07.html">
+              <span class="episode-no">07</span>
+              <span class="episode-title">Unit 3 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-06/episodes/episode-08.html">
+              <span class="episode-no">08</span>
+              <span class="episode-title">Unit 3 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-06/episodes/episode-09.html">
+              <span class="episode-no">09</span>
+              <span class="episode-title">Unit 4 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-06/episodes/episode-10.html">
+              <span class="episode-no">10</span>
+              <span class="episode-title">Unit 4 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-06/episodes/episode-11.html">
+              <span class="episode-no">11</span>
+              <span class="episode-title">Unit 4 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-06/episodes/episode-12.html">
+              <span class="episode-no">12</span>
+              <span class="episode-title">Unit 5 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-06/episodes/episode-13.html">
+              <span class="episode-no">13</span>
+              <span class="episode-title">Unit 5 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-06/episodes/episode-14.html">
+              <span class="episode-no">14</span>
+              <span class="episode-title">Unit 5 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-06/episodes/episode-15.html">
+              <span class="episode-no">15</span>
+              <span class="episode-title">Unit 6 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-06/episodes/episode-16.html">
+              <span class="episode-no">16</span>
+              <span class="episode-title">Unit 6 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-06/episodes/episode-17.html">
+              <span class="episode-no">17</span>
+              <span class="episode-title">Unit 6 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-06/episodes/episode-18.html">
+              <span class="episode-no">18</span>
+              <span class="episode-title">Unit 7 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-06/episodes/episode-19.html">
+              <span class="episode-no">19</span>
+              <span class="episode-title">Unit 7 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-06/episodes/episode-20.html">
+              <span class="episode-no">20</span>
+              <span class="episode-title">Unit 8 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-06/episodes/episode-21.html">
+              <span class="episode-no">21</span>
+              <span class="episode-title">Unit 8 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-06/episodes/episode-22.html">
+              <span class="episode-no">22</span>
+              <span class="episode-title">Unit 8 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-06/episodes/episode-23.html">
+              <span class="episode-no">23</span>
+              <span class="episode-title">Unit 9 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-06/episodes/episode-24.html">
+              <span class="episode-no">24</span>
+              <span class="episode-title">Unit 9 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-06/episodes/episode-25.html">
+              <span class="episode-no">25</span>
+              <span class="episode-title">Unit 9 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+        </div>
+      </details>
+      <details class="level-detail" data-level="07">
+        <summary>
+          <span>第七级 · 银色 · Wow! Silver</span>
+          <span class="detail-count">9–10岁 · 26 集</span>
+        </summary>
+        <div class="episode-grid">
+          
+            <a class="episode-card" href="level-07/episodes/episode-01.html">
+              <span class="episode-no">01</span>
+              <span class="episode-title">Unit 1 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-07/episodes/episode-02.html">
+              <span class="episode-no">02</span>
+              <span class="episode-title">Unit 1 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-07/episodes/episode-03.html">
+              <span class="episode-no">03</span>
+              <span class="episode-title">Unit 1 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-07/episodes/episode-04.html">
+              <span class="episode-no">04</span>
+              <span class="episode-title">Unit 1 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-07/episodes/episode-05.html">
+              <span class="episode-no">05</span>
+              <span class="episode-title">Unit 1 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-07/episodes/episode-06.html">
+              <span class="episode-no">06</span>
+              <span class="episode-title">Unit 3 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-07/episodes/episode-07.html">
+              <span class="episode-no">07</span>
+              <span class="episode-title">Unit 3 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-07/episodes/episode-08.html">
+              <span class="episode-no">08</span>
+              <span class="episode-title">Unit 3 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-07/episodes/episode-09.html">
+              <span class="episode-no">09</span>
+              <span class="episode-title">Unit 4 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-07/episodes/episode-10.html">
+              <span class="episode-no">10</span>
+              <span class="episode-title">Unit · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-07/episodes/episode-11.html">
+              <span class="episode-no">11</span>
+              <span class="episode-title">Unit 4 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-07/episodes/episode-12.html">
+              <span class="episode-no">12</span>
+              <span class="episode-title">Unit 5 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-07/episodes/episode-13.html">
+              <span class="episode-no">13</span>
+              <span class="episode-title">Unit · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-07/episodes/episode-14.html">
+              <span class="episode-no">14</span>
+              <span class="episode-title">Unit 5 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-07/episodes/episode-15.html">
+              <span class="episode-no">15</span>
+              <span class="episode-title">Unit 6 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-07/episodes/episode-16.html">
+              <span class="episode-no">16</span>
+              <span class="episode-title">Unit 6 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-07/episodes/episode-17.html">
+              <span class="episode-no">17</span>
+              <span class="episode-title">Unit 6 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-07/episodes/episode-18.html">
+              <span class="episode-no">18</span>
+              <span class="episode-title">Unit 7 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-07/episodes/episode-19.html">
+              <span class="episode-no">19</span>
+              <span class="episode-title">Unit 7 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-07/episodes/episode-20.html">
+              <span class="episode-no">20</span>
+              <span class="episode-title">Unit 7 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-07/episodes/episode-21.html">
+              <span class="episode-no">21</span>
+              <span class="episode-title">Unit 8 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-07/episodes/episode-22.html">
+              <span class="episode-no">22</span>
+              <span class="episode-title">Unit 8 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-07/episodes/episode-23.html">
+              <span class="episode-no">23</span>
+              <span class="episode-title">Unit 8 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-07/episodes/episode-24.html">
+              <span class="episode-no">24</span>
+              <span class="episode-title">Unit 9 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-07/episodes/episode-25.html">
+              <span class="episode-no">25</span>
+              <span class="episode-title">Unit 9 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-07/episodes/episode-26.html">
+              <span class="episode-no">26</span>
+              <span class="episode-title">Unit 9 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+        </div>
+      </details>
+      <details class="level-detail" data-level="08">
+        <summary>
+          <span>第八级 · 金色 · Wow! Gold</span>
+          <span class="detail-count">10–12岁 · 26 集</span>
+        </summary>
+        <div class="episode-grid">
+          
+            <a class="episode-card" href="level-08/episodes/episode-01.html">
+              <span class="episode-no">01</span>
+              <span class="episode-title">Unit 1 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-08/episodes/episode-02.html">
+              <span class="episode-no">02</span>
+              <span class="episode-title">Unit 1 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-08/episodes/episode-03.html">
+              <span class="episode-no">03</span>
+              <span class="episode-title">Unit 2 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-08/episodes/episode-04.html">
+              <span class="episode-no">04</span>
+              <span class="episode-title">Unit 2 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-08/episodes/episode-05.html">
+              <span class="episode-no">05</span>
+              <span class="episode-title">Unit 2 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-08/episodes/episode-06.html">
+              <span class="episode-no">06</span>
+              <span class="episode-title">Unit 3 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-08/episodes/episode-07.html">
+              <span class="episode-no">07</span>
+              <span class="episode-title">Unit 3 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-08/episodes/episode-08.html">
+              <span class="episode-no">08</span>
+              <span class="episode-title">Unit 3 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-08/episodes/episode-09.html">
+              <span class="episode-no">09</span>
+              <span class="episode-title">Unit 4 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-08/episodes/episode-10.html">
+              <span class="episode-no">10</span>
+              <span class="episode-title">Unit 4 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-08/episodes/episode-11.html">
+              <span class="episode-no">11</span>
+              <span class="episode-title">Unit 4 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-08/episodes/episode-12.html">
+              <span class="episode-no">12</span>
+              <span class="episode-title">Unit 5 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-08/episodes/episode-13.html">
+              <span class="episode-no">13</span>
+              <span class="episode-title">Unit 5 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-08/episodes/episode-14.html">
+              <span class="episode-no">14</span>
+              <span class="episode-title">Unit 5 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-08/episodes/episode-15.html">
+              <span class="episode-no">15</span>
+              <span class="episode-title">Unit 6 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-08/episodes/episode-16.html">
+              <span class="episode-no">16</span>
+              <span class="episode-title">Unit 6 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-08/episodes/episode-17.html">
+              <span class="episode-no">17</span>
+              <span class="episode-title">Unit 6 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-08/episodes/episode-18.html">
+              <span class="episode-no">18</span>
+              <span class="episode-title">Unit 7 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-08/episodes/episode-19.html">
+              <span class="episode-no">19</span>
+              <span class="episode-title">Unit 7 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-08/episodes/episode-20.html">
+              <span class="episode-no">20</span>
+              <span class="episode-title">Unit 7 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-08/episodes/episode-21.html">
+              <span class="episode-no">21</span>
+              <span class="episode-title">Unit 8 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-08/episodes/episode-22.html">
+              <span class="episode-no">22</span>
+              <span class="episode-title">Unit 8 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-08/episodes/episode-23.html">
+              <span class="episode-no">23</span>
+              <span class="episode-title">Unit 8 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-08/episodes/episode-24.html">
+              <span class="episode-no">24</span>
+              <span class="episode-title">Unit 9 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-08/episodes/episode-25.html">
+              <span class="episode-no">25</span>
+              <span class="episode-title">Unit 9 · story</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+            <a class="episode-card" href="level-08/episodes/episode-26.html">
+              <span class="episode-no">26</span>
+              <span class="episode-title">Unit 9 · song</span>
+              <span class="episode-arrow" aria-hidden="true">›</span>
+            </a>
+        </div>
+      </details>
+      </section>
+        </div>
+      </div>
+    </main>
+    
+  </body>
+</html>

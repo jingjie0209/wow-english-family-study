@@ -1,0 +1,637 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Wow English 第一级黄色 · 学习菜单</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 750px;
+        background: #fff;
+        color: #1d1d1f;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue",
+          Arial, sans-serif;
+      }
+      body {
+        font-size: 16px;
+      }
+      main {
+        width: 750px;
+        overflow: hidden;
+      }
+      .brand-bar {
+        display: flex;
+        align-items: center;
+      }
+      .season-menu {
+        margin-left: auto;
+        color: #17604d;
+        font-size: 12px;
+        font-weight: 700;
+        text-decoration: none;
+      }
+      .hero-copy h1 {
+        letter-spacing: 0;
+      }
+      .episode {
+        font-size: 28px !important;
+        line-height: 1.2 !important;
+        letter-spacing: 0 !important;
+      }
+      .lesson-video {
+        padding: 24px 48px 12px;
+        background: #fff;
+      }
+      .lesson-video video {
+        display: block;
+        width: 654px;
+        aspect-ratio: 16/9;
+        border: 1px solid #dfe3e0;
+        background: #000;
+        object-fit: contain;
+      }
+      .source-note {
+        margin: 0 48px 20px;
+        padding: 10px 12px;
+        border-left: 3px solid #e3aa23;
+        background: #fff9ea;
+        color: #66511e;
+        font-size: 12px;
+        line-height: 1.55;
+      }
+      .word-visual {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 78px;
+        background: #f4f7f5;
+        color: #17604d;
+        font-size: 25px;
+        font-weight: 800;
+      }
+      .word-copy span,
+      .extension-word span {
+        display: block;
+        margin-top: 3px;
+        color: #647168;
+        font-size: 12px;
+      }
+      .audio-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 27px;
+        height: 27px;
+        margin-left: 7px;
+        border: 0;
+        border-radius: 50%;
+        background: #eef3ef;
+        color: #17604d;
+        cursor: pointer;
+        vertical-align: middle;
+      }
+      .audio-btn svg {
+        width: 14px;
+        height: 14px;
+      }
+      .pattern-pair {
+        display: grid !important;
+        grid-template-columns: 260px 1fr !important;
+        gap: 12px !important;
+        align-items: start !important;
+        margin: 0 48px 12px !important;
+        padding: 12px !important;
+        width: 654px !important;
+        border: 1px solid #e1e5e2 !important;
+        border-left: 3px solid #17604d !important;
+        box-shadow: none !important;
+        background: #fff !important;
+      }
+      .pattern {
+        padding: 7px 8px !important;
+      }
+      .pattern-number {
+        margin-bottom: 8px;
+      }
+      .formula {
+        font-size: 17px !important;
+      }
+      .editable-map {
+        min-height: 0 !important;
+        height: auto !important;
+      }
+      .map-compact {
+        display: grid;
+        grid-template-columns: 116px 1fr;
+        gap: 8px;
+        align-items: start;
+      }
+      .map-label {
+        padding: 8px;
+        background: #eef4f0;
+        color: #17604d;
+        font-size: 12px;
+        font-weight: 800;
+      }
+      .map-items {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .map-chip {
+        padding: 5px 7px;
+        border: 1px solid #dfe4e0;
+        background: #fff;
+        font-size: 11px;
+        line-height: 1.25;
+      }
+      .map-chip strong {
+        display: block;
+        color: #1d1d1f;
+        font-size: 12px;
+      }
+      .map-chip span {
+        color: #69756d;
+      }
+      .transcript-source {
+        margin: 0 0 16px;
+        padding: 10px 12px;
+        background: #f7f7f8;
+        color: #5f6368;
+        font-size: 12px;
+        line-height: 1.5;
+      }
+      .cue {
+        display: grid;
+        grid-template-columns: 34px 1fr;
+        gap: 10px;
+        padding: 9px 0;
+        border-bottom: 1px solid #e6e8e6;
+      }
+      .cue-no {
+        color: #9a6810;
+        font-size: 11px;
+        font-weight: 800;
+      }
+      .cue p {
+        margin: 0;
+        font-size: 16px;
+        line-height: 1.45;
+      }
+      .download-row {
+        display: flex;
+        gap: 10px;
+        margin-top: 16px;
+      }
+      .download-link {
+        display: inline-flex;
+        align-items: center;
+        padding: 8px 11px;
+        border: 1px solid #dce3de;
+        border-radius: 5px;
+        color: #17604d;
+        font-size: 12px;
+        font-weight: 700;
+        text-decoration: none;
+      }
+      .review-card {
+        padding: 24px 48px;
+        border-top: 1px solid #e2e5e3;
+      }
+      .review-card img {
+        display: block;
+        width: 100%;
+        margin-top: 14px;
+        border: 1px solid #e0e3e1;
+      }
+      .page-footer {
+        padding: 25px 48px;
+        background: #164d3c;
+        color: #dce9e2;
+        font-size: 12px;
+        line-height: 1.6;
+      }
+      .page-footer strong {
+        color: #fff;
+      }
+      @media print {
+        .lesson-video,
+        .audio-btn,
+        .season-menu,
+        .download-row {
+          display: none !important;
+        }
+      }
+      .menu {
+        padding: 30px 48px 42px;
+      }
+      .menu h2 {
+        margin: 0 0 16px;
+        padding-bottom: 11px;
+        border-bottom: 2px solid #164d3c;
+        font-size: 24px;
+      }
+      .episode-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px 14px;
+      }
+      .episode-card {
+        display: flex;
+        align-items: center;
+        min-width: 0;
+        padding: 13px;
+        border: 1px solid #dce4de;
+        border-radius: 5px;
+        background: #fff;
+        color: inherit;
+        text-decoration: none;
+      }
+      .episode-row {
+        display: flex;
+        align-items: stretch;
+        min-width: 0;
+        gap: 8px;
+      }
+      .episode-row .episode-card {
+        flex: 1 1 auto;
+      }
+      .episode-card.is-complete {
+        border-color: #17604d;
+        background: #f0f8f3;
+      }
+      .episode-card.is-complete .episode-no {
+        background: #17604d;
+        color: #fff;
+      }
+      .episode-no {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 34px;
+        height: 34px;
+        border-radius: 50%;
+        background: #e9f2ec;
+        color: #17604d;
+        font-size: 12px;
+        font-weight: 800;
+      }
+      .episode-copy {
+        min-width: 0;
+        margin-left: 10px;
+      }
+      .episode-copy strong {
+        display: block;
+        overflow: hidden;
+        font-size: 13px;
+        line-height: 1.35;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .episode-copy small {
+        display: none;
+        margin-top: 3px;
+        color: #718077;
+        font-size: 11px;
+      }
+      .status-toggle {
+        flex: 0 0 70px;
+        align-self: stretch;
+        padding: 0 7px;
+        border: 1px solid #dce4de;
+        border-radius: 5px;
+        background: #f7f8f7;
+        color: #718077;
+        font: 700 11px/1.2 inherit;
+        cursor: pointer;
+      }
+      .status-toggle.is-complete {
+        border-color: #17604d;
+        background: #17604d;
+        color: #fff;
+      }
+      .status-summary {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin: 0 0 14px;
+        color: #5f6d64;
+        font-size: 12px;
+      }
+      .status-summary strong {
+        color: #17604d;
+      }
+      .arrow {
+        margin-left: auto;
+        color: #17604d;
+        font-size: 22px;
+      }
+      .review-links {
+        display: flex;
+        gap: 10px;
+        margin-top: 14px;
+      }
+      .review-links a {
+        padding: 9px 11px;
+        border: 1px solid #e0e4e1;
+        border-radius: 5px;
+        color: #17604d;
+        font-size: 12px;
+        text-decoration: none;
+      }
+      @media (max-width: 600px) {
+        .status-toggle {
+          flex-basis: 64px;
+          font-size: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header class="hero">
+        <p class="brand">
+          <span class="brand-wow">WOW</span
+          ><span class="brand-english">ENGLISH</span>
+        </p>
+        <div class="hero-copy">
+          <h1>Level 1 · Wow! Yellow</h1>
+          <p class="episode">33 lessons · 9 units</p>
+        </div>
+      </header>
+      <section class="menu">
+        <h2>第一级课程菜单</h2>
+        <p class="transcript-source">
+          33 个视频与 33 份 PDF 台词本逐一对应；黄色每日打卡 Day 34-36
+          是复习附录，不是新集数。
+        </p>
+        <div class="status-summary" aria-live="polite">
+          <span>学习进度：<strong id="completed-count">0 / 33</strong></span>
+          <span>点击右侧状态即可标记完成</span>
+        </div>
+        <div class="episode-grid">
+          <a class="episode-card" href="../episodes/episode-01.html"
+            ><span class="episode-no">01</span
+            ><span class="episode-copy"
+              ><strong>Unit 1 hello · story</strong
+              ><small>Unit 1 · story</small></span
+            ><span class="arrow">›</span></a
+          ><a class="episode-card" href="../episodes/episode-02.html"
+            ><span class="episode-no">02</span
+            ><span class="episode-copy"
+              ><strong>Unit 1 hello · song1</strong
+              ><small>Unit 1 · song1</small></span
+            ><span class="arrow">›</span></a
+          ><a class="episode-card" href="../episodes/episode-03.html"
+            ><span class="episode-no">03</span
+            ><span class="episode-copy"
+              ><strong>Unit 1 hello · song2</strong
+              ><small>Unit 1 · song2</small></span
+            ><span class="arrow">›</span></a
+          ><a class="episode-card" href="../episodes/episode-04.html"
+            ><span class="episode-no">04</span
+            ><span class="episode-copy"
+              ><strong>Unit 2 colour · story</strong
+              ><small>Unit 2 · story</small></span
+            ><span class="arrow">›</span></a
+          ><a class="episode-card" href="../episodes/episode-05.html"
+            ><span class="episode-no">05</span
+            ><span class="episode-copy"
+              ><strong>Unit 2 colour · song</strong
+              ><small>Unit 2 · song</small></span
+            ><span class="arrow">›</span></a
+          ><a class="episode-card" href="../episodes/episode-06.html"
+            ><span class="episode-no">06</span
+            ><span class="episode-copy"
+              ><strong>Unit 3 garden - part 1 · story</strong
+              ><small>Unit 3 · story</small></span
+            ><span class="arrow">›</span></a
+          ><a class="episode-card" href="../episodes/episode-07.html"
+            ><span class="episode-no">07</span
+            ><span class="episode-copy"
+              ><strong>Unit 3 garden - part 1 · song</strong
+              ><small>Unit 3 · song</small></span
+            ><span class="arrow">›</span></a
+          ><a class="episode-card" href="../episodes/episode-08.html"
+            ><span class="episode-no">08</span
+            ><span class="episode-copy"
+              ><strong>Unit 3 garden - part 2 · story</strong
+              ><small>Unit 3 · story</small></span
+            ><span class="arrow">›</span></a
+          ><a class="episode-card" href="../episodes/episode-09.html"
+            ><span class="episode-no">09</span
+            ><span class="episode-copy"
+              ><strong>Unit 3 garden - part 2 · song</strong
+              ><small>Unit 3 · song</small></span
+            ><span class="arrow">›</span></a
+          ><a class="episode-card" href="../episodes/episode-10.html"
+            ><span class="episode-no">10</span
+            ><span class="episode-copy"
+              ><strong>Unit 4 toys- part 1 · story</strong
+              ><small>Unit 4 · story</small></span
+            ><span class="arrow">›</span></a
+          ><a class="episode-card" href="../episodes/episode-11.html"
+            ><span class="episode-no">11</span
+            ><span class="episode-copy"
+              ><strong>Unit 4 toys- part 1 · song</strong
+              ><small>Unit 4 · song</small></span
+            ><span class="arrow">›</span></a
+          ><a class="episode-card" href="../episodes/episode-12.html"
+            ><span class="episode-no">12</span
+            ><span class="episode-copy"
+              ><strong>Unit 4 'toys' - part 2 · story</strong
+              ><small>Unit 4 · story</small></span
+            ><span class="arrow">›</span></a
+          ><a class="episode-card" href="../episodes/episode-13.html"
+            ><span class="episode-no">13</span
+            ><span class="episode-copy"
+              ><strong>Unit 4 'toys' - part 2 · song</strong
+              ><small>Unit 4 · song</small></span
+            ><span class="arrow">›</span></a
+          ><a class="episode-card" href="../episodes/episode-14.html"
+            ><span class="episode-no">14</span
+            ><span class="episode-copy"
+              ><strong>Unit 5 'body' - part 1 · story</strong
+              ><small>Unit 5 · story</small></span
+            ><span class="arrow">›</span></a
+          ><a class="episode-card" href="../episodes/episode-15.html"
+            ><span class="episode-no">15</span
+            ><span class="episode-copy"
+              ><strong>Unit 5 'body' - part 1 · song</strong
+              ><small>Unit 5 · song</small></span
+            ><span class="arrow">›</span></a
+          ><a class="episode-card" href="../episodes/episode-16.html"
+            ><span class="episode-no">16</span
+            ><span class="episode-copy"
+              ><strong>Unit 5 'body' - part 2 · story</strong
+              ><small>Unit 5 · story</small></span
+            ><span class="arrow">›</span></a
+          ><a class="episode-card" href="../episodes/episode-17.html"
+            ><span class="episode-no">17</span
+            ><span class="episode-copy"
+              ><strong>Unit 5 'body' - part 2 · song</strong
+              ><small>Unit 5 · song</small></span
+            ><span class="arrow">›</span></a
+          ><a class="episode-card" href="../episodes/episode-18.html"
+            ><span class="episode-no">18</span
+            ><span class="episode-copy"
+              ><strong>Unit 6 'food' - part 1 · story</strong
+              ><small>Unit 6 · story</small></span
+            ><span class="arrow">›</span></a
+          ><a class="episode-card" href="../episodes/episode-19.html"
+            ><span class="episode-no">19</span
+            ><span class="episode-copy"
+              ><strong>Unit 6 'food' - part 1 · song</strong
+              ><small>Unit 6 · song</small></span
+            ><span class="arrow">›</span></a
+          ><a class="episode-card" href="../episodes/episode-20.html"
+            ><span class="episode-no">20</span
+            ><span class="episode-copy"
+              ><strong>Unit 6 'food' - part 2 · story</strong
+              ><small>Unit 6 · story</small></span
+            ><span class="arrow">›</span></a
+          ><a class="episode-card" href="../episodes/episode-21.html"
+            ><span class="episode-no">21</span
+            ><span class="episode-copy"
+              ><strong>Unit 6 'food' - part 2 · song</strong
+              ><small>Unit 6 · song</small></span
+            ><span class="arrow">›</span></a
+          ><a class="episode-card" href="../episodes/episode-22.html"
+            ><span class="episode-no">22</span
+            ><span class="episode-copy"
+              ><strong>Unit 7 'bugs' - part 1 · story</strong
+              ><small>Unit 7 · story</small></span
+            ><span class="arrow">›</span></a
+          ><a class="episode-card" href="../episodes/episode-23.html"
+            ><span class="episode-no">23</span
+            ><span class="episode-copy"
+              ><strong>Unit 7 'bugs' - part 1 · song</strong
+              ><small>Unit 7 · song</small></span
+            ><span class="arrow">›</span></a
+          ><a class="episode-card" href="../episodes/episode-24.html"
+            ><span class="episode-no">24</span
+            ><span class="episode-copy"
+              ><strong>Unit 7 bugs - part 2 · story</strong
+              ><small>Unit 7 · story</small></span
+            ><span class="arrow">›</span></a
+          ><a class="episode-card" href="../episodes/episode-25.html"
+            ><span class="episode-no">25</span
+            ><span class="episode-copy"
+              ><strong>Unit 7 bugs - part 2 · song</strong
+              ><small>Unit 7 · song</small></span
+            ><span class="arrow">›</span></a
+          ><a class="episode-card" href="../episodes/episode-26.html"
+            ><span class="episode-no">26</span
+            ><span class="episode-copy"
+              ><strong>Unit 8 'feelings' - part 1 · story</strong
+              ><small>Unit 8 · story</small></span
+            ><span class="arrow">›</span></a
+          ><a class="episode-card" href="../episodes/episode-27.html"
+            ><span class="episode-no">27</span
+            ><span class="episode-copy"
+              ><strong>Unit 8 'feelings' - part 1 · song</strong
+              ><small>Unit 8 · song</small></span
+            ><span class="arrow">›</span></a
+          ><a class="episode-card" href="../episodes/episode-28.html"
+            ><span class="episode-no">28</span
+            ><span class="episode-copy"
+              ><strong>Unit 8 'feelings' - part 2 · story</strong
+              ><small>Unit 8 · story</small></span
+            ><span class="arrow">›</span></a
+          ><a class="episode-card" href="../episodes/episode-29.html"
+            ><span class="episode-no">29</span
+            ><span class="episode-copy"
+              ><strong>Unit 8 'feelings' - part 2 · song</strong
+              ><small>Unit 8 · song</small></span
+            ><span class="arrow">›</span></a
+          ><a class="episode-card" href="../episodes/episode-30.html"
+            ><span class="episode-no">30</span
+            ><span class="episode-copy"
+              ><strong>Unit 9 'clothes' - part 1 · story</strong
+              ><small>Unit 9 · story</small></span
+            ><span class="arrow">›</span></a
+          ><a class="episode-card" href="../episodes/episode-31.html"
+            ><span class="episode-no">31</span
+            ><span class="episode-copy"
+              ><strong>Unit 9 'clothes' - part 1 · song</strong
+              ><small>Unit 9 · song</small></span
+            ><span class="arrow">›</span></a
+          ><a class="episode-card" href="../episodes/episode-32.html"
+            ><span class="episode-no">32</span
+            ><span class="episode-copy"
+              ><strong>Unit 9 'clothes' - part 2 · story</strong
+              ><small>Unit 9 · story</small></span
+            ><span class="arrow">›</span></a
+          ><a class="episode-card" href="../episodes/episode-33.html"
+            ><span class="episode-no">33</span
+            ><span class="episode-copy"
+              ><strong>Unit 9 'clothes' - part 2 · song</strong
+              ><small>Unit 9 · song</small></span
+            ><span class="arrow">›</span></a
+          >
+        </div>
+        <h2 style="margin-top: 30px">复习附录</h2>
+        <div class="review-links">
+          <a href="../reviews/review-34.html">动词·数词·形容词</a
+          ><a href="../reviews/review-35.html">名词 1/2</a
+          ><a href="../reviews/review-36.html">名词 2/2</a>
+        </div>
+      </section>
+      <footer class="page-footer">
+        <strong>数据源：</strong>第一级黄色 33 集 PDF 台词本 + 黄色每日打卡 +
+        第一级 51 页单词卡目录。
+      </footer>
+    </main>
+    <script>
+      (() => {
+        const storageKey = "wow-english-level-01-completed";
+        const completed = new Set(JSON.parse(localStorage.getItem(storageKey) || "[]"));
+        const cards = [...document.querySelectorAll(".episode-card")];
+        const count = document.getElementById("completed-count");
+
+        const update = (card, button, done) => {
+          const episode = card.querySelector(".episode-no").textContent.trim();
+          card.classList.toggle("is-complete", done);
+          button.classList.toggle("is-complete", done);
+          button.textContent = done ? "已完成" : "未完成";
+          button.setAttribute("aria-pressed", String(done));
+          button.setAttribute("aria-label", `${episode} ${done ? "取消完成" : "标记为完成"}`);
+        };
+
+        cards.forEach((card) => {
+          const row = document.createElement("div");
+          row.className = "episode-row";
+          card.parentNode.insertBefore(row, card);
+          row.appendChild(card);
+
+          const episode = card.querySelector(".episode-no").textContent.trim();
+          const button = document.createElement("button");
+          button.type = "button";
+          button.className = "status-toggle";
+          button.addEventListener("click", (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            const done = !completed.has(episode);
+            if (done) completed.add(episode);
+            else completed.delete(episode);
+            localStorage.setItem(storageKey, JSON.stringify([...completed].sort()));
+            update(card, button, done);
+            count.textContent = `${completed.size} / ${cards.length}`;
+          });
+          row.appendChild(button);
+          update(card, button, completed.has(episode));
+        });
+
+        count.textContent = `${completed.size} / ${cards.length}`;
+      })();
+    </script>
+  </body>
+</html>

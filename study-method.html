@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>WOW English 学习方法</title>
+    <style>
+      * { box-sizing: border-box; }
+      html, body {
+        margin: 0;
+        min-width: 320px;
+        background: #fff;
+        color: #1d1d1f;
+        font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+      }
+      button, select { font: inherit; }
+      main { width: 1080px; max-width: 100%; margin: 0 auto; }
+      .hero { padding: 0 36px 34px; border-bottom: 1px solid #dedee2; }
+      .brand-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 48px;
+        border-bottom: 1px solid #ededee;
+      }
+      .brand { margin: 0; font-size: 12px; font-weight: 800; }
+      .brand-wow { color: #164d3c; }
+      .brand-english { color: #6e6e73; font-weight: 500; }
+      .top-nav { display: flex; align-items: center; gap: 18px; }
+      .top-nav a { color: #62666a; font-size: 12px; font-weight: 650; text-decoration: none; }
+      .top-nav a[aria-current="page"] { color: #17604d; }
+      .hero-copy { padding-top: 34px; }
+      .eyebrow { margin: 0 0 8px; color: #17604d; font-size: 13px; font-weight: 750; }
+      h1 { margin: 0; font-size: 38px; line-height: 1.15; letter-spacing: 0; }
+      .hero-intro { max-width: 620px; margin: 13px 0 0; color: #5f6460; font-size: 15px; line-height: 1.7; }
+      .page-layout { display: grid; grid-template-columns: 178px minmax(0, 1fr); align-items: start; }
+      .side-menu { position: sticky; top: 18px; padding: 30px 18px 30px 28px; }
+      .side-menu-title { margin: 0 0 12px; color: #969b98; font-size: 11px; font-weight: 800; letter-spacing: .04em; }
+      .side-menu a { display: block; padding: 10px 10px; border-left: 2px solid transparent; color: #626a65; font-size: 13px; line-height: 1.3; text-decoration: none; }
+      .side-menu a:hover, .side-menu a:focus { border-left-color: #17604d; background: #f4f8f5; color: #17604d; }
+      .content-column { min-width: 0; }
+      section { padding: 34px 50px; border-bottom: 1px solid #ededee; }
+      h2 { margin: 0 0 20px; font-size: 25px; line-height: 1.25; letter-spacing: 0; }
+      .method-flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+      .method-step { min-width: 0; padding: 15px 14px; border-top: 3px solid #17604d; background: #f7f8f7; }
+      .method-step:nth-child(2) { border-top-color: #c28b16; }
+      .method-step:nth-child(3) { border-top-color: #2978a0; }
+      .method-step:nth-child(4) { border-top-color: #7b5b9a; }
+      .method-step b { display: block; margin-bottom: 5px; font-size: 15px; }
+      .method-step span { color: #636965; font-size: 12px; line-height: 1.55; }
+      .method-note { margin: 16px 0 0; color: #5e645f; font-size: 13px; line-height: 1.7; }
+      .method-note strong { color: #2e3832; }
+      .planner { background: #fafafa; }
+      .planner-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 18px; }
+      label { display: grid; gap: 7px; color: #4f5752; font-size: 12px; font-weight: 700; }
+      select {
+        width: 100%;
+        height: 42px;
+        padding: 0 34px 0 12px;
+        border: 1px solid #cfd5d1;
+        border-radius: 5px;
+        background: #fff;
+        color: #1d1d1f;
+      }
+      .today-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+      .today-item {
+        display: flex;
+        flex-direction: column;
+        min-height: 132px;
+        padding: 14px;
+        border: 1px solid #d9dedb;
+        border-radius: 6px;
+        background: #fff;
+        color: inherit;
+        text-decoration: none;
+      }
+      .today-item:hover { border-color: #17604d; }
+      .today-item.is-empty { pointer-events: none; opacity: .42; }
+      .today-tag { color: #17604d; font-size: 11px; font-weight: 800; }
+      .today-title { margin-top: 9px; font-size: 13px; line-height: 1.45; font-weight: 700; }
+      .today-meta { margin-top: auto; padding-top: 12px; color: #777d79; font-size: 11px; }
+      .practice-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0 26px; margin-top: 22px; }
+      .practice-row { display: flex; gap: 12px; padding: 12px 0; border-top: 1px solid #e4e6e5; }
+      .practice-row b { flex: 0 0 62px; color: #17604d; font-size: 12px; }
+      .practice-row span { color: #545b56; font-size: 12px; line-height: 1.55; }
+      .course-menu { padding-bottom: 48px; }
+      .course-intro { margin: -8px 0 18px; color: #656b67; font-size: 13px; line-height: 1.6; }
+      .level-detail { margin: 0 0 10px; border: 1px solid #dce1de; border-left: 3px solid #17604d; }
+      .level-detail summary {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 115px 18px;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 16px;
+        color: #17604d;
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: 800;
+        list-style: none;
+      }
+      .level-detail summary::-webkit-details-marker { display: none; }
+      .level-detail summary::after { content: "⌄"; font-size: 18px; line-height: 1; }
+      .level-detail[open] summary::after { content: "⌃"; }
+      .detail-count { color: #6d746f; font-size: 12px; font-weight: 500; text-align: left; white-space: nowrap; }
+      .episode-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 12px; padding: 0 12px 12px; }
+      .episode-card {
+        display: flex;
+        align-items: center;
+        min-width: 0;
+        gap: 9px;
+        padding: 10px;
+        border: 1px solid #e2e6e3;
+        color: inherit;
+        text-decoration: none;
+      }
+      .episode-card:hover { border-color: #17604d; background: #f6faf8; }
+      .episode-no {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 28px;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: #e8f1ec;
+        color: #17604d;
+        font-size: 11px;
+        font-weight: 800;
+      }
+      .episode-title { min-width: 0; overflow: hidden; font-size: 12px; text-overflow: ellipsis; white-space: nowrap; }
+      .episode-arrow { margin-left: auto; color: #17604d; font-size: 18px; }
+      @media (max-width: 680px) {
+        .hero { padding: 0 20px 28px; }
+        section { padding: 28px 20px; }
+        .page-layout { grid-template-columns: 128px minmax(0, 1fr); }
+        .side-menu { padding: 24px 8px 24px 14px; }
+        .side-menu a { padding: 9px 7px; font-size: 12px; }
+        h1 { font-size: 32px; }
+        .method-flow, .today-grid { grid-template-columns: 1fr 1fr; }
+        .planner-controls, .practice-list, .episode-grid { grid-template-columns: 1fr; }
+        .level-detail summary { grid-template-columns: minmax(0, 1fr) 92px 18px; gap: 7px; }
+      }
+      @media (max-width: 390px) {
+        .top-nav { gap: 12px; }
+        .page-layout { grid-template-columns: 112px minmax(0, 1fr); }
+        .side-menu { padding-left: 8px; padding-right: 5px; }
+        .side-menu a { padding-left: 5px; padding-right: 4px; font-size: 11px; }
+        .method-flow, .today-grid { grid-template-columns: 1fr; }
+        .today-item { min-height: 104px; }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header class="hero">
+        <div class="brand-bar">
+          <p class="brand"><span class="brand-wow">WOW</span> <span class="brand-english">ENGLISH</span></p>
+          <nav class="top-nav" aria-label="主菜单"><a href="home.html">课程菜单</a><a href="study-method.html">学习方法</a><a href="materials-matrix.html">资料对照</a></nav>
+        </div>
+        <div class="hero-copy">
+          <p class="eyebrow">LEARN · REVIEW · USE</p>
+          <h1>学习方法</h1>
+          <p class="hero-intro">每天只推进一集新内容，同时带回最近和较早学过的内容。完整看新课，复习时只做关键片段、动作和跟读，不必反复完整播放。</p>
+        </div>
+      </header>
+      <div class="page-layout">
+        <aside class="side-menu" aria-label="学习方法菜单"><p class="side-menu-title">学习导航</p><a href="study-method.html" aria-current="page">学习方法</a><a href="today.html">今天学什么</a><a href="courses.html">全部课程</a></aside>
+        <div class="content-column">
+          <section id="method" aria-labelledby="method-title">
+        <h2 id="method-title">四步滚动学习</h2>
+        <div class="method-flow">
+          <div class="method-step"><b>1. 新课</b><span>完整观看，理解情景，跟着动作和语气模仿。</span></div>
+          <div class="method-step"><b>2. 近期复习</b><span>复习前 1 集，回忆词汇与核心句型。</span></div>
+          <div class="method-step"><b>3. 间隔复习</b><span>复习前 3 集，用暂停和提问促使孩子开口。</span></div>
+          <div class="method-step"><b>4. 轻量维护</b><span>复习前 7 集，只看重点片段或唱歌做动作。</span></div>
+        </div>
+        <p class="method-note"><strong>核心规则：</strong>新内容少量推进，旧内容按间隔再次出现。重点不是累计播放时长，而是孩子能听懂指令、跟读句型并在情景中主动说出来。</p>
+      </section>
+        </div>
+      </div>
+    </main>
+    
+  </body>
+</html>
